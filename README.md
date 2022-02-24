@@ -20,8 +20,6 @@ Signup
 Products page
 ![Screenshot (56)](https://miro.medium.com/max/875/1*D4GW0TdEhANt9J4vUOvVBw.png)
 
- Sale
- ![Sale](https://image.uniqlo.com/UQ/ST3/in/imagesother/mail/RepublicDay/up-Republic-Wishlist-Banner.gif)
 
 Sections page
 ![Screenshot (58)](https://miro.medium.com/max/875/1*OjQzHmVFRNe43byIqf-jPg.png)
