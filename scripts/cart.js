@@ -42,7 +42,7 @@ const recentlyViewObj = [
 
 recentlyView(recentlyViewObj);
 function recentlyView(data) {
-  data.map(({ image, gendar, size, description, exclusive, price }) => {
+  data.map(({ image, category, size, description, name, price }) => {
     let mainDiv = document.createElement("div");
     let imgDiv = document.createElement("div");
     imgDiv.setAttribute("class", "imgDiv");
@@ -59,10 +59,10 @@ function recentlyView(data) {
     exclus.setAttribute("class", "exclusive");
 
     img.src = image;
-    gend.innerText = gendar;
+    gend.innerText = category;
     siz.innerText = size;
     desc.innerText = description;
-    exclus.innerText = exclusive;
+    exclus.innerText = name;
     pric.innerText = `Rs. ${price}`;
 
     imgDiv.append(img);
@@ -104,7 +104,7 @@ function showCart(cart){
     cartDiv.append(showCartDiv);
 
     cart.map((elem, index) => {
-      let { image, gendar, size, description, exclusive, price, quantity, id } = elem;
+      let { image, category, size, description, name, price, quantity, id } = elem;
 
       sum += price*quantity;
 
@@ -134,7 +134,7 @@ function showCart(cart){
 
       price = +price
       let content = document.createElement("p");
-      content.innerHTML = `Product Id: ${id} <br> Gender: ${gendar} <br> Size: ${size} <br> ${exclusive}<br> <b>Rs. ${price.toFixed(
+      content.innerHTML = `Product Id: ${id} <br> Gender: ${category} <br> Size: ${size} <br> ${name}<br> <b>Rs. ${price.toFixed(
         2
       )}</b> <br> <h3>Quantity: </h3>`;
 

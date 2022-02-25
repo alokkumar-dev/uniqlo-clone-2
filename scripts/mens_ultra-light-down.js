@@ -1,39 +1,59 @@
-const newArrivalObj_1 = [
-    {
-        image: "https://image.uniqlo.com/UQ/ST3/in/imagesgoods/439589/item/ingoods_68_439589.jpg?width=1008&impolicy=quality_75",
-        gendar: "MEN",
-        size: "S-XXL",
-        name: "MEN Ultra Light6 Down Jecket",
-       desc: "Exclusive Size Online Only",
-        price: 4990
-    },
-    {
-        image: "https://image.uniqlo.com/UQ/ST3/in/imagesgoods/439806/item/ingoods_45_439806.jpg?width=1008&impolicy=quality_75",
-        gendar: "MEN",
-        size: "S-3XL",
-        name: "MEN Ultra Light Down Parka",
-        desc: "Exclusive Size Online Only",
-        price: 5990
-    },
+// const newArrivalObj_1 = [
+//     {
+//         image: "https://image.uniqlo.com/UQ/ST3/in/imagesgoods/439589/item/ingoods_68_439589.jpg?width=1008&impolicy=quality_75",
+//         gendar: "MEN",
+//         size: "S-XXL",
+//         name: "MEN Ultra Light6 Down Jecket",
+//        desc: "Exclusive Size Online Only",
+//         price: 4990
+//     },
+//     {
+//         image: "https://image.uniqlo.com/UQ/ST3/in/imagesgoods/439806/item/ingoods_45_439806.jpg?width=1008&impolicy=quality_75",
+//         gendar: "MEN",
+//         size: "S-3XL",
+//         name: "MEN Ultra Light Down Parka",
+//         desc: "Exclusive Size Online Only",
+//         price: 5990
+//     },
 
-    {
-        image: "https://image.uniqlo.com/UQ/ST3/in/imagesgoods/439807/item/ingoods_31_439807.jpg?width=1008&impolicy=quality_75",
-        gendar: "MEN",
-        size: "S-XXL",
-        name: "MEN Ultra Light Down Vest",
-        desc: "Exclusive Size Online Only",
-        price: 2990
-    },
+//     {
+//         image: "https://image.uniqlo.com/UQ/ST3/in/imagesgoods/439807/item/ingoods_31_439807.jpg?width=1008&impolicy=quality_75",
+//         gendar: "MEN",
+//         size: "S-XXL",
+//         name: "MEN Ultra Light Down Vest",
+//         desc: "Exclusive Size Online Only",
+//         price: 2990
+//     },
    
    
 
-];
+// ];
 // console.log(newArrivalObj_1[0].price+newArrivalObj_1[1].price);
+// displayProducts_1(newArrivalObj_1);
 
-displayProducts_1(newArrivalObj_1);
+
+async function searchVideo() {
+    try {
+
+        let responce = await fetch(`https://uniqlo-clone.herokuapp.com/products`);
+
+        let data = await responce.json();
+        console.log("Data : ", data.products);
+
+        displayProducts_1(data.products);
+
+    }
+    catch (err) {
+        console.log("Error", err);
+    }
+
+
+}
+searchVideo();
+
 function displayProducts_1(data) {
     document.querySelector(".productSide").innerHTML="";
-    data.map(({ image, gendar, size, name,desc, price }) => {
+    data.map(({ image, category, size, name,description, price }) => {
         let mainDiv = document.createElement("div");
         let imgDiv = document.createElement("div");
         let sizeDiv = document.createElement("div");
@@ -52,10 +72,10 @@ function displayProducts_1(data) {
 
         let productsObj = {
             image,
-            gendar,
+            category,
             size,
             name,
-            desc,
+            description,
             price
         }
         mainDiv.addEventListener("click", () => {
@@ -63,10 +83,10 @@ function displayProducts_1(data) {
         });
 
         img.src = image;
-        gend.innerText = gendar;
+        gend.innerText = category;
         siz.innerText = size;
         des.innerText = name;
-        exclus.innerText = desc;
+        exclus.innerText = description;
         pric.innerText = `Rs. ${price}.00`;
 
         imgDiv.append(img);

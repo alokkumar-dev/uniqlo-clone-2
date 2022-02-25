@@ -54,7 +54,7 @@ function showProd(getData) {
     img.src = getData.image;
     smallImg.src = getData.image;
     desc.innerText = getData.description;
-    exclus.innerText = getData.exclusive;
+    exclus.innerText = getData.name;
     pric.innerText = `MRP Rs.  ${getData.price}`;
     descDiv.append(desc, pric, exclus, inclus, pera, hr);
     document.getElementById("productId").innerText = getData.id;
