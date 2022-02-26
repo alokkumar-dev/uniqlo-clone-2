@@ -32,10 +32,10 @@
 // displayProducts_1(newArrivalObj_1);
 
 
-async function searchVideo() {
+async function search() {
     try {
 
-        let responce = await fetch(`https://uniqlo-clone.herokuapp.com/products`);
+        let responce = await fetch(`https://uniqlo-clone.herokuapp.com/products?gender=MEN&cat=MEN-Ultra-Light-Down`);
 
         let data = await responce.json();
         console.log("Data : ", data.products);
@@ -49,11 +49,11 @@ async function searchVideo() {
 
 
 }
-searchVideo();
+search();
 
 function displayProducts_1(data) {
     document.querySelector(".productSide").innerHTML="";
-    data.map(({ image, category, size, name,description, price }) => {
+    data.map(({ image, gender, size, name,description, price, _id }) => {
         let mainDiv = document.createElement("div");
         let imgDiv = document.createElement("div");
         let sizeDiv = document.createElement("div");
@@ -72,18 +72,19 @@ function displayProducts_1(data) {
 
         let productsObj = {
             image,
-            category,
+            gender,
             size,
             name,
             description,
-            price
+            price,
+            id:_id.substr(5,6)
         }
         mainDiv.addEventListener("click", () => {
             storeData(productsObj);
         });
 
         img.src = image;
-        gend.innerText = category;
+        gend.innerText = gender;
         siz.innerText = size;
         des.innerText = name;
         exclus.innerText = description;

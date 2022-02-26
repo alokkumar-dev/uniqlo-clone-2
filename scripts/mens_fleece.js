@@ -1,31 +1,49 @@
-const newArrivalObj_1 = [
-    {
-        image: "https://image.uniqlo.com/UQ/ST3/in/imagesgoods/440593/item/ingoods_03_440593.jpg?width=1008&impolicy=quality_75",
-        gendar: "MEN",
-        size: "S-XXL",
-        name: "MEN Fluffy Yarn Fleece Full-Zip Jecket",
-       desc: "Exclusive Size Online Only",
-        price: 1490
-    },
-    {
-        image: "https://image.uniqlo.com/UQ/ST3/in/imagesgoods/440592/item/ingoods_28_440592.jpg?width=1008&impolicy=quality_75",
-        gendar: "MEN",
-        size: "S-3XL",
-        name: "Fleece Long Sleeve Full-Zip Jacket",
-        desc: "Exclusive Size Online Only",
-        price: 1990
-    },
+// const newArrivalObj_1 = [
+//     {
+//         image: "https://image.uniqlo.com/UQ/ST3/in/imagesgoods/440593/item/ingoods_03_440593.jpg?width=1008&impolicy=quality_75",
+//         gendar: "MEN",
+//         size: "S-XXL",
+//         name: "MEN Fluffy Yarn Fleece Full-Zip Jecket",
+//        desc: "Exclusive Size Online Only",
+//         price: 1490
+//     },
+//     {
+//         image: "https://image.uniqlo.com/UQ/ST3/in/imagesgoods/440592/item/ingoods_28_440592.jpg?width=1008&impolicy=quality_75",
+//         gendar: "MEN",
+//         size: "S-3XL",
+//         name: "Fleece Long Sleeve Full-Zip Jacket",
+//         desc: "Exclusive Size Online Only",
+//         price: 1990
+//     },
 
  
    
 
-];
+// ];
 // console.log(newArrivalObj_1[0].price+newArrivalObj_1[1].price);
+async function search() {
+    try {
 
-displayProducts_1(newArrivalObj_1);
+        let responce = await fetch(`https://uniqlo-clone.herokuapp.com/products?gender=MEN&cat=MEN-Fleece`);
+
+        let data = await responce.json();
+        console.log("Data : ", data.products);
+
+        displayProducts_1(data.products);
+
+    }
+    catch (err) {
+        console.log("Error", err);
+    }
+
+
+}
+search();
+
+// displayProducts_1(newArrivalObj_1);
 function displayProducts_1(data) {
     document.querySelector(".productSide").innerHTML="";
-    data.map(({ image, gendar, size, name,desc, price }) => {
+    data.map(({ image, gender, size, name,description, price,_id }) => {
         let mainDiv = document.createElement("div");
         let imgDiv = document.createElement("div");
         let sizeDiv = document.createElement("div");
@@ -44,21 +62,22 @@ function displayProducts_1(data) {
 
         let productsObj = {
             image,
-            gendar,
+            gender,
             size,
             name,
-            desc,
-            price
+            description,
+            price,
+            id:_id.substr(5,6)
         }
         mainDiv.addEventListener("click", () => {
             storeData(productsObj);
         });
 
         img.src = image;
-        gend.innerText = gendar;
+        gend.innerText=gender,
         siz.innerText = size;
         des.innerText = name;
-        exclus.innerText = desc;
+        exclus.innerText = description;
         pric.innerText = `Rs. ${price}.00`;
 
         imgDiv.append(img);

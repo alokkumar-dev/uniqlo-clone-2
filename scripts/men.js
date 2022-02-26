@@ -1,42 +1,57 @@
-let newMenObj=[
-  {
-      image : "https://image.uniqlo.com/UQ/ST3/in/imagesgoods/445041/item/ingoods_30_445041.jpg?width=1008&impolicy=quality_75",
-      gender : "MEN",
-      size  : "S-3XL",
-      name : "MEN Coach Jacket",
-      desc : "Exclusive Size Online Only,New Arrivals",
-      price : 3990
-  },
-  {
-    image : "https://image.uniqlo.com/UQ/ST3/in/imagesgoods/446217/item/ingoods_00_446217.jpg?width=1008&impolicy=quality_75",
-    gender : "MEN",
-    size  : "S-XXL",
-    name : "MEN Monochrome Mickey Long Sleeve Sweatshirt",
-    desc : "",
-    price : 1990
-  },
-  {
-    image : "https://image.uniqlo.com/UQ/ST3/in/imagesgoods/448383/item/ingoods_65_448383.jpg?width=1008&impolicy=quality_75",
-    gender : "MEN",
-    size  : "S-3XL",
-    name : "MEN Hickory Oversized Stand Collar Long Sleeve Shirt",
-    desc : "Exclusive Size Online Only",
-    price : 2490
-  },
-  {
-    image : "https://image.uniqlo.com/UQ/ST3/in/imagesgoods/444586/item/ingoods_67_444586.jpg?width=1008&impolicy=quality_75",
-    gender : "MEN",
-    size  : "28INCH-40INCH",
-    name : "MEN Regular Fit Straight Jeans",
-    desc : "Exclusive Size Online Only,Limited Store",
-    price : 2990
-  },
-]
+// let newMenObj=[
+//   {
+//       image : "https://image.uniqlo.com/UQ/ST3/in/imagesgoods/445041/item/ingoods_30_445041.jpg?width=1008&impolicy=quality_75",
+//       gender : "MEN",
+//       size  : "S-3XL",
+//       name : "MEN Coach Jacket",
+//       desc : "Exclusive Size Online Only,New Arrivals",
+//       price : 3990
+//   },
+//   {
+//     image : "https://image.uniqlo.com/UQ/ST3/in/imagesgoods/446217/item/ingoods_00_446217.jpg?width=1008&impolicy=quality_75",
+//     gender : "MEN",
+//     size  : "S-XXL",
+//     name : "MEN Monochrome Mickey Long Sleeve Sweatshirt",
+//     desc : "",
+//     price : 1990
+//   },
+//   {
+//     image : "https://image.uniqlo.com/UQ/ST3/in/imagesgoods/448383/item/ingoods_65_448383.jpg?width=1008&impolicy=quality_75",
+//     gender : "MEN",
+//     size  : "S-3XL",
+//     name : "MEN Hickory Oversized Stand Collar Long Sleeve Shirt",
+//     desc : "Exclusive Size Online Only",
+//     price : 2490
+//   },
+//   {
+//     image : "https://image.uniqlo.com/UQ/ST3/in/imagesgoods/444586/item/ingoods_67_444586.jpg?width=1008&impolicy=quality_75",
+//     gender : "MEN",
+//     size  : "28INCH-40INCH",
+//     name : "MEN Regular Fit Straight Jeans",
+//     desc : "Exclusive Size Online Only,Limited Store",
+//     price : 2990
+//   },
+// ]
+
+async function main1(){
+  let url = `https://uniqlo-clone.herokuapp.com/products?gender=MEN&cat=MEN-Main1`
+  try{
+    let res =await fetch(url);
+    let data =await res.json()
+    let x = data.products
+    displayprod(x)
+   // console.log(x)
+  }
+  catch(e){
+    console.log('e:', e)
+  }
+}
+main1()
 let product4 =document.getElementById("product4")
-displayprod(newMenObj)
+// displayprod(newMenObj)
 function displayprod(data){
 
-  data.map(({image,gender,size,name,desc,price})=>{
+  data.map(({image,gender,size,name,description,price,_id})=>{
      let div =document.createElement("div");
      let imgdiv = document.createElement("div");
      let sizediv =document.createElement("div");   
@@ -52,19 +67,23 @@ function displayprod(data){
      nam.textContent =name;
 
      let des = document.createElement("h3");
-     des.textContent =desc;
+     des.textContent =description;
      des.id ="desc"
 
      let pric = document.createElement("p");
      pric.textContent = `Rs. ${price}`;
+
+     let id =document.createElement("p");
+     id.textContent = _id;
 
      let productObj ={
       image,
       gender,
       size,
       name,
-      desc,
+      description,
       price,
+      id:_id.substr(5,6)
   };
 
   div.addEventListener("click",()=>{
@@ -82,61 +101,75 @@ function displayprod(data){
   })
 }
 
-let newMenObj2= [
-  {
-    image : "https://image.uniqlo.com/UQ/ST3/in/imagesgoods/444049/item/ingoods_03_444049.jpg?width=1008&impolicy=quality_75",
-    gender : "MEN",
-    size  :  "S-3XL",
-    name :  "MEN Pile Lined Sweat Long Sleeve Full-Zip Hoodie",
-    exc :  "Exclusive Size Online Only",
-    striked_price : "Rs. 2,490.00",
-    price : 1990,
-    desc : "",
-    limited : "Limited Offer Until Jan 20",
-    star : "⭐⭐⭐⭐(19)",
-  },
-  {
-    image : "https://image.uniqlo.com/UQ/ST3/in/imagesgoods/444051/item/ingoods_03_444051.jpg?width=1008&impolicy=quality_75",
-    gender : "MEN",
-    size  :  "S-3XL",
-    name :  "MEN Pile Lined Sweat Pants",
-    exc : "Exclusive Size Online Only",
-    striked_price :"Rs. 2,490.00",
-    price : 1990,
-    desc : "",
-    limited : "Limited Offer Until Jan 20",
-    star : "⭐⭐⭐⭐(12)",
-  },
-  {
-    image : "https://image.uniqlo.com/UQ/ST3/in/imagesgoods/441097/item/ingoods_31_441097.jpg?width=1008&impolicy=quality_75",
-    gender : "MEN",
-    size  :  "S-3XL",
-    name : "MEN Pile Lined Fleece Set (Long Sleeve)", 
-    exc : "Exclusive Size Online Only",
-    striked_price :"Rs. 2,490.00",
-    price : 1990,
-    desc : "",
-    limited :"Limited Offer Until Jan 20",
-    star : "⭐⭐⭐⭐(29)",
-  },
-  {
-    image : "https://image.uniqlo.com/UQ/ST3/in/imagesgoods/439589/item/ingoods_68_439589.jpg?width=1008&impolicy=quality_75",
-    gender : "MEN",
-    size  :  "S-3XL",
-    name :  "MEN Ultra Light Down Jacket (3D Cut)",
-    exc : "",
-    striked_price : "",
-    price :1990,
-    desc : "",
-    limited : "",
-    star : "⭐⭐⭐⭐(64)",
-  },
-]
+// let newMenObj2= [
+//   {
+//     image : "https://image.uniqlo.com/UQ/ST3/in/imagesgoods/444049/item/ingoods_03_444049.jpg?width=1008&impolicy=quality_75",
+//     gender : "MEN",
+//     size  :  "S-3XL",
+//     name :  "MEN Pile Lined Sweat Long Sleeve Full-Zip Hoodie",
+//     exc :  "Exclusive Size Online Only",
+//     striked_price : "Rs. 2,490.00",
+//     price : 1990,
+//     desc : "",
+//     limited : "Limited Offer Until Jan 20",
+//     star : "⭐⭐⭐⭐(19)",
+//   },
+//   {
+//     image : "https://image.uniqlo.com/UQ/ST3/in/imagesgoods/444051/item/ingoods_03_444051.jpg?width=1008&impolicy=quality_75",
+//     gender : "MEN",
+//     size  :  "S-3XL",
+//     name :  "MEN Pile Lined Sweat Pants",
+//     exc : "Exclusive Size Online Only",
+//     striked_price :"Rs. 2,490.00",
+//     price : 1990,
+//     desc : "",
+//     limited : "Limited Offer Until Jan 20",
+//     star : "⭐⭐⭐⭐(12)",
+//   },
+//   {
+//     image : "https://image.uniqlo.com/UQ/ST3/in/imagesgoods/441097/item/ingoods_31_441097.jpg?width=1008&impolicy=quality_75",
+//     gender : "MEN",
+//     size  :  "S-3XL",
+//     name : "MEN Pile Lined Fleece Set (Long Sleeve)", 
+//     exc : "Exclusive Size Online Only",
+//     striked_price :"Rs. 2,490.00",
+//     price : 1990,
+//     desc : "",
+//     limited :"Limited Offer Until Jan 20",
+//     star : "⭐⭐⭐⭐(29)",
+//   },
+//   {
+//     image : "https://image.uniqlo.com/UQ/ST3/in/imagesgoods/439589/item/ingoods_68_439589.jpg?width=1008&impolicy=quality_75",
+//     gender : "MEN",
+//     size  :  "S-3XL",
+//     name :  "MEN Ultra Light Down Jacket (3D Cut)",
+//     exc : "",
+//     striked_price : "",
+//     price :1990,
+//     desc : "",
+//     limited : "",
+//     star : "⭐⭐⭐⭐(64)",
+//   },
+// ]
+async function main2(){
+  let url = `https://uniqlo-clone.herokuapp.com/products?gender=MEN&cat=MEN-Main2`
+  try{
+    let res =await fetch(url);
+    let data =await res.json()
+    let x = data.products
+    limitedOffers(x)
+   // console.log(x)
+  }
+  catch(e){
+    console.log('e:', e)
+  }
+}
+main2()
  let limited_off =document.getElementById("limited_offer");
- limitedOffers(newMenObj2)
+ 
 function limitedOffers(data){
 
-  data.map(({image,gender,size,name,exc,striked_price,price,desc,limited,star})=>{
+  data.map(({image,gender,size,name,exc,striked_price,price,description,limited,star,_id})=>{
     let div =document.createElement("div");
     let imgdiv = document.createElement("div");
     let sizediv =document.createElement("div");   
@@ -174,8 +207,9 @@ function limitedOffers(data){
       gender,
       size,
       name,
-      desc,
+      description,
       price,
+      id:_id.substr(5,6)
   };
 
   div.addEventListener("click",()=>{
@@ -191,61 +225,75 @@ function limitedOffers(data){
 }
 
 
-let newMenObj3= [
-  {
-    image : "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/446519/item/goods_69_446519.jpg?width=1008&impolicy=quality_75",
-    gender : "MEN",
-    size  :  "XS-XXL",
-    name :  "MEN Easy Work Trousers",
-    exc :  "Exclusive Size Online Only",
-    striked_price : "Rs. 4,990.00",
-    price : 3990,
-    desc : "",
-    limited : "Sale",
-    star : "⭐(1)",
-  },
-  {
-    image : "https://image.uniqlo.com/UQ/ST3/in/imagesgoods/448661/item/ingoods_01_448661.jpg?width=1008&impolicy=quality_75",
-    gender : "MEN",
-    size  :  "S-3XL",
-    name :  "MEN Smart Ankle Trousers 2WAY Stretch Cotton",
-    exc : "Exclusive Size Online Only,New Arrivals",
-    striked_price :"Rs. 2,490.00",
-    price : 1990,
-    desc : "",
-    limited : "Sale",
-    star : "⭐⭐⭐⭐⭐(2)",
-  },
-  {
-    image : "https://image.uniqlo.com/UQ/ST3/in/imagesgoods/438793/item/ingoods_69_438793.jpg?width=1008&impolicy=quality_75",
-    gender : "MEN",
-    size  :  "S-3XL",
-    name : "MEN Souffle Yarn Mock Neck Long Sleeve Sweater", 
-    exc : "Exclusive Size Online Only",
-    striked_price :"Rs. 2,490.00",
-    price :  1990,
-    desc : "",
-    limited :"Sale",
-    star : "⭐⭐⭐⭐(2)",
-  },
-  {
-    image : "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/446430/item/goods_08_446430.jpg?width=1008&impolicy=quality_75",
-    gender : "MEN",
-    size  :  "S-L",
-    name :  "MEN Supima Cotton Oversized Stand Collar Shirt",
-    exc : "Online Only",
-    striked_price : "Rs. 2,990.00",
-    price :  1990,
-    desc : "",
-    limited : "Sale",
-    star : "",
-  },
-]
+// let newMenObj3= [
+//   {
+//     image : "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/446519/item/goods_69_446519.jpg?width=1008&impolicy=quality_75",
+//     gender : "MEN",
+//     size  :  "XS-XXL",
+//     name :  "MEN Easy Work Trousers",
+//     exc :  "Exclusive Size Online Only",
+//     striked_price : "Rs. 4,990.00",
+//     price : 3990,
+//     desc : "",
+//     limited : "Sale",
+//     star : "⭐(1)",
+//   },
+//   {
+//     image : "https://image.uniqlo.com/UQ/ST3/in/imagesgoods/448661/item/ingoods_01_448661.jpg?width=1008&impolicy=quality_75",
+//     gender : "MEN",
+//     size  :  "S-3XL",
+//     name :  "MEN Smart Ankle Trousers 2WAY Stretch Cotton",
+//     exc : "Exclusive Size Online Only,New Arrivals",
+//     striked_price :"Rs. 2,490.00",
+//     price : 1990,
+//     desc : "",
+//     limited : "Sale",
+//     star : "⭐⭐⭐⭐⭐(2)",
+//   },
+//   {
+//     image : "https://image.uniqlo.com/UQ/ST3/in/imagesgoods/438793/item/ingoods_69_438793.jpg?width=1008&impolicy=quality_75",
+//     gender : "MEN",
+//     size  :  "S-3XL",
+//     name : "MEN Souffle Yarn Mock Neck Long Sleeve Sweater", 
+//     exc : "Exclusive Size Online Only",
+//     striked_price :"Rs. 2,490.00",
+//     price :  1990,
+//     desc : "",
+//     limited :"Sale",
+//     star : "⭐⭐⭐⭐(2)",
+//   },
+//   {
+//     image : "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/446430/item/goods_08_446430.jpg?width=1008&impolicy=quality_75",
+//     gender : "MEN",
+//     size  :  "S-L",
+//     name :  "MEN Supima Cotton Oversized Stand Collar Shirt",
+//     exc : "Online Only",
+//     striked_price : "Rs. 2,990.00",
+//     price :  1990,
+//     desc : "",
+//     limited : "Sale",
+//     star : "",
+//   },
+// ]
+async function main3(){
+  let url = `https://uniqlo-clone.herokuapp.com/products?gender=MEN&cat=MEN-Main3`
+  try{
+    let res =await fetch(url);
+    let data =await res.json()
+    let x = data.products
+    SaleOffers(x)
+    console.log(x)
+  }
+  catch(e){
+    console.log('e:', e)
+  }
+}
+main3()
  let sale =document.getElementById("sale_product")
- SaleOffers(newMenObj3)
+ 
 function  SaleOffers(data){
 
-  data.map(({image,gender,size,name,exc,striked_price,price,desc,limited,star})=>{
+  data.map(({image,gender,size,name,exclusive,striked_price,price,description,limited,star,_id})=>{
     let div =document.createElement("div");
     let imgdiv = document.createElement("div");
     let sizediv =document.createElement("div");   
@@ -261,7 +309,7 @@ function  SaleOffers(data){
     nam.textContent =name;
 
     let des = document.createElement("p");
-    des.textContent =exc;
+    des.textContent =exclusive;
     des.id ="desc"
 
     let striked = document.createElement("p");
@@ -282,8 +330,9 @@ function  SaleOffers(data){
       gender,
       size,
       name,
-      desc,
+      description,
       price,
+      id:_id.substr(5,6)
   };
 
   div.addEventListener("click",()=>{
@@ -299,50 +348,63 @@ function  SaleOffers(data){
 }
 
 
-let newMenObj4=[
-  {
-      image : "https://image.uniqlo.com/UQ/ST3/in/imagesgoods/444553/item/ingoods_67_444553.jpg?width=1008&impolicy=quality_75",
-      gender : "MEN",
-      size  : "S-XXL",
-      name : "MEN Utility Parka",
-      desc : "Limited Store",
-      price : 4990,
-      star : "⭐⭐⭐⭐⭐(1)",
-  },
-  {
-    image : "https://image.uniqlo.com/UQ/ST3/in/imagesgoods/440522/item/ingoods_66_440522.jpg?width=1008&impolicy=quality_75",
-    gender : "MEN",
-    size  : "S-3XL",
-    name : "Waffle Crew Neck Long Sleeve T-Shirt",
-    desc : "Exclusive Size Online Only",
-    price : 1990,
-    star : "⭐⭐⭐⭐⭐(3)",
-  },
-  {
-    image : "https://image.uniqlo.com/UQ/ST3/in/imagesgoods/444583/item/ingoods_05_444583.jpg?width=1008&impolicy=quality_75",
-    gender : "MEN",
-    size  : "28INCH-38INCH",
-    name : "MEN Extra Stretch Skinny Fit Jeans",
-    desc : "Exclusive Size Online Only",
-    price : 2990,
-    star : "⭐⭐⭐⭐⭐(1)",
-  },
-  {
-    image : "https://image.uniqlo.com/UQ/ST3/in/imagesgoods/448134/item/ingoods_04_448134.jpg?width=1008&impolicy=quality_75",
-    gender : "MEN",
-    size  : "S-3XL",
-    name : "MEN Ultra Stretch Dry Sweat Trousers",
-    desc : "Exclusive Size Online Only,New Arrivals",
-    price : 2490,
-    star : "⭐⭐⭐⭐⭐(5)",
-  },
-]
-
+// let newMenObj4=[
+//   {
+//       image : "https://image.uniqlo.com/UQ/ST3/in/imagesgoods/444553/item/ingoods_67_444553.jpg?width=1008&impolicy=quality_75",
+//       gender : "MEN",
+//       size  : "S-XXL",
+//       name : "MEN Utility Parka",
+//       desc : "Limited Store",
+//       price : 4990,
+//       star : "⭐⭐⭐⭐⭐(1)",
+//   },
+//   {
+//     image : "https://image.uniqlo.com/UQ/ST3/in/imagesgoods/440522/item/ingoods_66_440522.jpg?width=1008&impolicy=quality_75",
+//     gender : "MEN",
+//     size  : "S-3XL",
+//     name : "Waffle Crew Neck Long Sleeve T-Shirt",
+//     desc : "Exclusive Size Online Only",
+//     price : 1990,
+//     star : "⭐⭐⭐⭐⭐(3)",
+//   },
+//   {
+//     image : "https://image.uniqlo.com/UQ/ST3/in/imagesgoods/444583/item/ingoods_05_444583.jpg?width=1008&impolicy=quality_75",
+//     gender : "MEN",
+//     size  : "28INCH-38INCH",
+//     name : "MEN Extra Stretch Skinny Fit Jeans",
+//     desc : "Exclusive Size Online Only",
+//     price : 2990,
+//     star : "⭐⭐⭐⭐⭐(1)",
+//   },
+//   {
+//     image : "https://image.uniqlo.com/UQ/ST3/in/imagesgoods/448134/item/ingoods_04_448134.jpg?width=1008&impolicy=quality_75",
+//     gender : "MEN",
+//     size  : "S-3XL",
+//     name : "MEN Ultra Stretch Dry Sweat Trousers",
+//     desc : "Exclusive Size Online Only,New Arrivals",
+//     price : 2490,
+//     star : "⭐⭐⭐⭐⭐(5)",
+//   },
+// ]
+async function main4(){
+  let url = `https://uniqlo-clone.herokuapp.com/products?gender=MEN&cat=MEN-Main4`
+  try{
+    let res =await fetch(url);
+    let data =await res.json()
+    let x = data.products
+    featureprod(x)
+    console.log(x)
+  }
+  catch(e){
+    console.log('e:', e)
+  }
+}
+main4()
 let feature =document.getElementById("featured_offer")
-featureprod(newMenObj4)
+//featureprod(newMenObj4)
 function featureprod(data){
 
-  data.map(({image,gender,size,name,desc,price,star})=>{
+  data.map(({image,gender,size,name,description,price,star,_id})=>{
      let div =document.createElement("div");
      let imgdiv = document.createElement("div");
      let sizediv =document.createElement("div");   
@@ -358,7 +420,7 @@ function featureprod(data){
      nam.textContent =name;
 
      let des = document.createElement("h3");
-     des.textContent =desc;
+     des.textContent =description;
      des.id ="desc"
 
      let pric = document.createElement("h4");
@@ -371,8 +433,9 @@ function featureprod(data){
       gender,
       size,
       name,
-      desc,
+      description,
       price,
+      id:_id.substr(5,6)
   };
 
   div.addEventListener("click",()=>{

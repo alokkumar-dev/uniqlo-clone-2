@@ -41,6 +41,7 @@ function showData(getData){
   //  document.getElementById("productId").innerHTML = "";
   document.getElementById("smallimg").innerHTML ="";
     document.querySelector("#content").innerHTML = "";
+    document.getElementById("productId").innerHTML = getData.id;
 
 
     inclu.innerText = `inclusive of all taxes`;
@@ -48,7 +49,7 @@ function showData(getData){
     img.src =getData.image;
     img2.src =getData.image;
     nam.innerText =getData.name;
-    des.innerText =getData.desc;
+    des.innerText =getData.description;
     pric.innerText = `MRP Rs.  ${getData.price}.00`;
     div.append(nam,pric,des,inclu,per,hr);
     document.getElementById("smallimg").append(img2);
