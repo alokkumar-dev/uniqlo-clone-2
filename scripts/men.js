@@ -393,7 +393,7 @@ async function main4(){
     let data =await res.json()
     let x = data.products
     featureprod(x)
-    console.log(x)
+   // console.log(x)
   }
   catch(e){
     console.log('e:', e)
@@ -673,3 +673,21 @@ function storingData(data){
   localStorage.setItem("uniqProd",JSON.stringify(data));
   window.location.href = "./productinfo.html"
 }
+
+const moveArr = document.querySelectorAll(".move")
+//console.log(moveArr)
+
+moveArr.forEach((elem)=>{
+  elem.addEventListener("click",()=>{
+    window.location.href = "men_ultra-light-down.html"
+  })
+})
+// function pro(){
+//   window.location.href = "men_ultra-light-down.html"
+// }
+
+
+// var app=document.querySelectorAll(".app");
+// app.forEach((elem)=>{
+// elem.addEventListener("click",()=>{
+// window.location.href="app.html"
