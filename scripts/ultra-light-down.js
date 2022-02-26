@@ -78,7 +78,7 @@
 
 // displayProducts_1(newArrivalObj_1);
 
-async function searchVideo() {
+async function ultraLightProduct() {
   try {
     let responce = await fetch(
       `https://uniqlo-clone.herokuapp.com/products?gender=WOMEN&cat=Women-ultra-light-down`
@@ -92,7 +92,7 @@ async function searchVideo() {
     console.log("Error", err);
   }
 }
-searchVideo();
+ultraLightProduct();
 
 var sort = document.getElementById("sortProduct");
 sort.addEventListener("change", function priceSort() {
