@@ -2,7 +2,7 @@
 //   {
 //     image:
 //       "https://image.uniqlo.com/UQ/ST3/in/imagesgoods/439154/item/ingoods_32_439154.jpg?width=1008&impolicy=quality_75",
-//     gendar: "WOMEN",
+//     gender: "WOMEN",
 //     size: "XS",
 //     description: "WOMEN Extra Fine Merino Crew Neck Long Sleeve Cardigan",
 //     exclusive: "Exclusive Size Online Only",
@@ -12,7 +12,7 @@
 //   {
 //     image:
 //       "https://image.uniqlo.com/UQ/ST3/in/imagesgoods/448033/item/ingoods_69_448033.jpg?width=1600&impolicy=quality_75",
-//     gendar: "WOMEN",
+//     gender: "WOMEN",
 //     size: "XS-XL",
 //     description: "WOMEN Washable Mock Neck Striped Sweater",
 //     exclusive: "Exclusive Size Online Only",
@@ -23,7 +23,7 @@
 //   {
 //     image:
 //       "https://image.uniqlo.com/UQ/ST3/in/imagesgoods/445190/item/ingoods_15_445190.jpg?width=1600&impolicy=quality_75",
-//     gendar: "WOMEN",
+//     gender: "WOMEN",
 //     size: "S-XL",
 //     description: "WOMEN Washable Cotton Crew Neck Sweater",
 //     exclusive: "Exclusive Size Online Only",
@@ -33,7 +33,7 @@
 //   {
 //     image:
 //       "https://image.uniqlo.com/UQ/ST3/in/imagesgoods/445186/item/ingoods_53_445186.jpg?width=1600&impolicy=quality_75",
-//     gendar: "WOMEN",
+//     gender: "WOMEN",
 //     size: "SL",
 //     description: "WOMEN Washable Mock Neck Sweater",
 //     exclusive: "Exclusive Size Online Only",
@@ -43,7 +43,7 @@
 //   {
 //     image:
 //       "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/445190/sub/goods_445190_sub9.jpg?width=1600&impolicy=quality_75",
-//     gendar: "WOMEN",
+//     gender: "WOMEN",
 //     size: "S-3XL",
 //     description: "WOMEN Washable Mock Neck Sweater",
 //     exclusive: "Exclusive Size Online Only",
@@ -53,7 +53,7 @@
 //   {
 //     image:
 //       "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/439150/sub/goods_439150_sub9.jpg?width=1600&impolicy=quality_75",
-//     gendar: "WOMEN",
+//     gender: "WOMEN",
 //     size: "S",
 //     description: "WOMEN Extra Fine Merino Crew Neck Long Sleeve Cardigan",
 //     exclusive: "Exclusive Size Online Only",
@@ -63,7 +63,7 @@
 //   {
 //     image:
 //       "https://image.uniqlo.com/UQ/ST3/in/imagesgoods/440037/item/ingoods_34_440037.jpg?width=1008&impolicy=quality_75",
-//     gendar: "WOMEN",
+//     gender: "WOMEN",
 //     size: "XS-XXL",
 //     description: "WOMEN Light Pile Lined Fleece Long Sleeve Set",
 //     exclusive: "Exclusive Size Online Only",
@@ -73,7 +73,7 @@
 //   {
 //     image:
 //       "https://image.uniqlo.com/UQ/ST3/in/imagesgoods/445192/item/ingoods_12_445192.jpg?width=1600&impolicy=quality_75",
-//     gendar: "WOMEN",
+//     gender: "WOMEN",
 //     size: "SX-XXL",
 //     description: "WOMEN UV Protection Crew Neck Cardigan",
 //     exclusive: "Exclusive Size Online Only",
@@ -83,7 +83,7 @@
 //   {
 //     image:
 //       "https://image.uniqlo.com/UQ/ST3/in/imagesgoods/445192/item/ingoods_53_445192.jpg?width=1600&impolicy=quality_75",
-//     gendar: "WOMEN",
+//     gender: "WOMEN",
 //     size: "SX-XL",
 //     description: "WOMEN UV Protection Crew Neck Green",
 //     exclusive: "Exclusive Size Online Only",
@@ -93,7 +93,7 @@
 //   {
 //     image:
 //       "https://image.uniqlo.com/UQ/ST3/in/imagesgoods/442884/item/ingoods_08_442884.jpg?width=1600&impolicy=quality_75",
-//     gendar: "WOMEN",
+//     gender: "WOMEN",
 //     size: "S-3XL",
 //     description: "WOMEN Light  Dark Gray Fleece Long Sleeve Set",
 //     exclusive: "Exclusive Size Online Only",
@@ -103,7 +103,7 @@
 //   {
 //     image:
 //       "https://image.uniqlo.com/UQ/ST3/in/imagesgoods/442884/item/ingoods_32_442884.jpg?width=1600&impolicy=quality_75",
-//     gendar: "WOMEN",
+//     gender: "WOMEN",
 //     size: "SX-XXL",
 //     description: "WOMEN Fluffy Yarn Beige Fleece Full-Zip Jecket",
 //     exclusive: "Exclusive Size Online Only",
@@ -111,17 +111,18 @@
 //     id: 445334,
 //   },
 // ];
-
+let data;
 async function ultraLightProduct() {
   try {
     let responce = await fetch(
       `https://uniqlo-clone.herokuapp.com/products?gender=WOMEN&cat=Women-sweaters`
     );
 
-    let data = await responce.json();
-    console.log("Data : ", data.products);
+    data = await responce.json();
+    data = data.products;
+    console.log("Data : ", data);
 
-    displayProducts_1(data.products);
+    displayProducts_1(data);
   } catch (err) {
     console.log("Error", err);
   }
@@ -130,7 +131,7 @@ ultraLightProduct();
 
 function displayProducts_1(data) {
   document.querySelector(".productSide").innerHTML = "";
-  data.map(({ image, gendar, size, description, exclusive, price, _id }) => {
+  data.map(({ image, gender, size, description, exclusive, price, _id }) => {
     let mainDiv = document.createElement("div");
     let imgDiv = document.createElement("div");
     let sizeDiv = document.createElement("div");
@@ -148,7 +149,7 @@ function displayProducts_1(data) {
 
     let productsObj = {
       image,
-      gendar,
+      gender,
       size,
       description,
       exclusive,
@@ -161,7 +162,7 @@ function displayProducts_1(data) {
     });
 
     img.src = image;
-    gend.innerText = gendar;
+    gend.innerText = gender;
     siz.innerText = size;
     desc.innerText = description;
     exclus.innerText = exclusive;
@@ -179,19 +180,19 @@ var sort = document.getElementById("sortProduct");
 sort.addEventListener("change", function priceSort() {
   var selected = document.getElementById("sortProduct").value;
   if (selected == "low") {
-    newArrivalObj_1.sort(function (a, b) {
+    data.sort(function (a, b) {
       // console.log(a.price)
       return a.price - b.price;
     });
   }
   if (selected == "high") {
-    newArrivalObj_1.sort(function (a, b) {
+    data.sort(function (a, b) {
       // console.log(b.price)
       return b.price - a.price;
     });
   }
 
-  displayProducts_1(newArrivalObj_1);
+  displayProducts_1(data);
 });
 
 // Store Data in localStorage here..

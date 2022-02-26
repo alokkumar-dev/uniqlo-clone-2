@@ -97,7 +97,7 @@ function showCart(cart) {
   cartDiv.append(showCartDiv);
 
   cart.map((elem, index) => {
-    let { image, gendar, size, description, exclusive, price, quantity, id } =
+    let { image, gender, size, description, exclusive, price, quantity, id } =
       elem;
 
     sum += price * quantity;
@@ -128,7 +128,7 @@ function showCart(cart) {
 
     price = +price;
     let content = document.createElement("p");
-    content.innerHTML = `Product Id: ${id} <br> Gender: ${gendar} <br> Size: ${size} <br> ${exclusive}<br> <b>Rs. ${price.toFixed(
+    content.innerHTML = `Product Id: ${id} <br> Gender: ${gender} <br> Size: ${size} <br> ${exclusive}<br> <b>Rs. ${price.toFixed(
       2
     )}</b> <br> <h3>Quantity: </h3>`;
 

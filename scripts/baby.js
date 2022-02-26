@@ -1,111 +1,111 @@
-const newArrivalObj_1 = [
-    {
-        image: "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/444680001/item/goods_10_444680001.jpg?width=1008&impolicy=quality_75",
-        gendar: "BABY",
-        size: "age3-6m(60)",
-        description: "BABIES NEWBORN Joy Of Print Long Sleeve Bodysuit",
-        exclusive: "New Arrivals",
-        price: 690
-    },
-    {
-        image: "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/445944/item/goods_01_445944.jpg?width=1008&impolicy=quality_75",
-        gendar: "BABY",
-        size: "6-12(70)-4-4Y(110)",
-        description: "BABIES TODDLER AIRism Cotton Long Sleeve T-Shirt",
-        exclusive: "Exclusive Size Online Only",
-        price: 990
-    },
+// const newArrivalObj_1 = [
+//     {
+//         image: "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/444680001/item/goods_10_444680001.jpg?width=1008&impolicy=quality_75",
+//         gender: "BABY",
+//         size: "age3-6m(60)",
+//         description: "BABIES NEWBORN Joy Of Print Long Sleeve Bodysuit",
+//         exclusive: "New Arrivals",
+//         price: 690
+//     },
+//     {
+//         image: "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/445944/item/goods_01_445944.jpg?width=1008&impolicy=quality_75",
+//         gender: "BABY",
+//         size: "6-12(70)-4-4Y(110)",
+//         description: "BABIES TODDLER AIRism Cotton Long Sleeve T-Shirt",
+//         exclusive: "Exclusive Size Online Only",
+//         price: 990
+//     },
 
-    {
-        image: "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/446456/item/goods_51_446456.jpg?width=1008&impolicy=quality_75",
-        gendar: "BABY",
-        size: "12-18(80)-4-5Y(110)",
-        description: "BABIES TODDLER Joy Of Print Cotton Mesh Inner 2 Pack",
-        exclusive: "New Arrivals",
-        price: 990
-    },
-    {
-        image: "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/446018/item/goods_64_446018.jpg?width=1008&impolicy=quality_75",
-        gendar: "BABY",
-        size: "12-18(80)-6-6Y(120)",
-        description: "BABIES TODDLER Pixar Monsters University Long Sleeve Pajamas",
-        exclusive: "Exclusive Size Online Only",
-        price: 1990
-    }
+//     {
+//         image: "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/446456/item/goods_51_446456.jpg?width=1008&impolicy=quality_75",
+//         gender: "BABY",
+//         size: "12-18(80)-4-5Y(110)",
+//         description: "BABIES TODDLER Joy Of Print Cotton Mesh Inner 2 Pack",
+//         exclusive: "New Arrivals",
+//         price: 990
+//     },
+//     {
+//         image: "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/446018/item/goods_64_446018.jpg?width=1008&impolicy=quality_75",
+//         gender: "BABY",
+//         size: "12-18(80)-6-6Y(120)",
+//         description: "BABIES TODDLER Pixar Monsters University Long Sleeve Pajamas",
+//         exclusive: "Exclusive Size Online Only",
+//         price: 1990
+//     }
 
-];
+// ];
 
-const newArrivalObj_2 = [
-    {
-        image: "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/439054/item/goods_10_439054.jpg?width=1008&impolicy=quality_75",
-        gendar: "BABY",
-        size: "12-18(80-3-4Y(100)",
-        description: "BABIES TODDLER Fluffy Yarn Fleece Jacket Long Sleeve",
-        exclusive: "",
-        price: 1990
-    },
-    {
-        image: "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/438910/item/goods_69_438910.jpg?width=1008&impolicy=quality_75",
-        gendar: "BABY",
-        size: "12-18(80)-3-4y(100)",
-        description: "BABIES TODDLER Light Warm Padded Full Zip Parka",
-        exclusive: "",
-        price: 2490
-    },
-    {
-        image: "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/439080/item/goods_11_439080.jpg?width=1008&impolicy=quality_75",
-        gendar: "BABY",
-        size: "12-18(80)-3-4Y(100)",
-        description: "BABIES TODDLER HEATTECH T-Shirt Scoop Neck Short Sleeve Thermal",
-        exclusive: "",
-        price: 490
-    },
-    {
-        image: "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/439078/item/goods_09_439078.jpg?width=1008&impolicy=quality_75",
-        gendar: "BABY",
-        size: "12-18(80)-3-4Y(100)",
-        description: "BABIES TODDLER HEATTECH Leggings Thermal",
-        exclusive: "",
-        price: 690
-    },
+// const newArrivalObj_2 = [
+//     {
+//         image: "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/439054/item/goods_10_439054.jpg?width=1008&impolicy=quality_75",
+//         gender: "BABY",
+//         size: "12-18(80-3-4Y(100)",
+//         description: "BABIES TODDLER Fluffy Yarn Fleece Jacket Long Sleeve",
+//         exclusive: "",
+//         price: 1990
+//     },
+//     {
+//         image: "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/438910/item/goods_69_438910.jpg?width=1008&impolicy=quality_75",
+//         gender: "BABY",
+//         size: "12-18(80)-3-4y(100)",
+//         description: "BABIES TODDLER Light Warm Padded Full Zip Parka",
+//         exclusive: "",
+//         price: 2490
+//     },
+//     {
+//         image: "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/439080/item/goods_11_439080.jpg?width=1008&impolicy=quality_75",
+//         gender: "BABY",
+//         size: "12-18(80)-3-4Y(100)",
+//         description: "BABIES TODDLER HEATTECH T-Shirt Scoop Neck Short Sleeve Thermal",
+//         exclusive: "",
+//         price: 490
+//     },
+//     {
+//         image: "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/439078/item/goods_09_439078.jpg?width=1008&impolicy=quality_75",
+//         gender: "BABY",
+//         size: "12-18(80)-3-4Y(100)",
+//         description: "BABIES TODDLER HEATTECH Leggings Thermal",
+//         exclusive: "",
+//         price: 690
+//     },
 
-];
+// ];
 
-const newArrivalObj_3 = [
-    {
-        image: "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/426125/item/goods_41_426125.jpg?width=1008&impolicy=quality_75",
-        gendar: "BABY",
-        size: "12-18(80)-3-4Y(100)",
-        description: "BABIES TODDLER Dry Short Sleeve Pajamas",
-        exclusive: "",
-        price: 990
-    },
-    {
-        image: "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/440716/item/goods_53_440716.jpg?width=1008&impolicy=quality_75",
-        gendar: "BABY",
-        size: "12-18(80)-3-4Y(110)",
-        description: "BABIES TODDLER Leggings",
-        exclusive: "",
-        price: 690
-    },
-    {
-        image: "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/426123/item/goods_01_426123.jpg?width=1008&impolicy=quality_75",
-        gendar: "BABY",
-        size: "12-18(80)-3-4Y(100)",
-        description: "BABIES TODDLER Short Sleeve Dry Pajamas",
-        exclusive: "",
-        price: 990
-    },
-    {
-        image: "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/443299/item/goods_40_443299.jpg?width=1008&impolicy=quality_75",
-        gendar: "BABY",
-        size: "AGE3-6M(60)-AGE12-18M(80)",
-        description: "BABIES NEWBORN Winnie The Pooh Quilted One Piece Outfit",
-        exclusive: "",
-        price: 1290
-    },
+// const newArrivalObj_3 = [
+//     {
+//         image: "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/426125/item/goods_41_426125.jpg?width=1008&impolicy=quality_75",
+//         gender: "BABY",
+//         size: "12-18(80)-3-4Y(100)",
+//         description: "BABIES TODDLER Dry Short Sleeve Pajamas",
+//         exclusive: "",
+//         price: 990
+//     },
+//     {
+//         image: "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/440716/item/goods_53_440716.jpg?width=1008&impolicy=quality_75",
+//         gender: "BABY",
+//         size: "12-18(80)-3-4Y(110)",
+//         description: "BABIES TODDLER Leggings",
+//         exclusive: "",
+//         price: 690
+//     },
+//     {
+//         image: "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/426123/item/goods_01_426123.jpg?width=1008&impolicy=quality_75",
+//         gender: "BABY",
+//         size: "12-18(80)-3-4Y(100)",
+//         description: "BABIES TODDLER Short Sleeve Dry Pajamas",
+//         exclusive: "",
+//         price: 990
+//     },
+//     {
+//         image: "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/443299/item/goods_40_443299.jpg?width=1008&impolicy=quality_75",
+//         gender: "BABY",
+//         size: "AGE3-6M(60)-AGE12-18M(80)",
+//         description: "BABIES NEWBORN Winnie The Pooh Quilted One Piece Outfit",
+//         exclusive: "",
+//         price: 1290
+//     },
 
-];
+// ];
 
 const newArrivalObj_5 = [
     {
@@ -159,9 +159,61 @@ const newArrivalObj_8 = [
 ];
 
 
-displayProducts_1(newArrivalObj_1);
+async function babyMainPage1() {
+    try {
+      let responce = await fetch(
+        `https://uniqlo-clone.herokuapp.com/products?gender=BABY&cat=Baby-Main1`
+      );
+  
+      let data = await responce.json();
+      console.log("Data : ", data.products);
+  
+      displayProducts_1(data.products);
+    } catch (err) {
+      console.log("Error", err);
+    }
+  }
+  babyMainPage1();
+  
+
+
+async function babyMainPage2() {
+    try {
+      let responce = await fetch(
+        `https://uniqlo-clone.herokuapp.com/products?gender=BABY&cat=Baby-Main2`
+      );
+  
+      let data = await responce.json();
+      console.log("Data : ", data.products);
+  
+      displayProducts_2(data.products);
+    } catch (err) {
+      console.log("Error", err);
+    }
+  }
+  babyMainPage2();
+  
+
+
+async function babyMainPage3() {
+    try {
+      let responce = await fetch(
+        `https://uniqlo-clone.herokuapp.com/products?gender=BABY&cat=Baby-Main3`
+      );
+  
+      let data = await responce.json();
+      console.log("Data : ", data.products);
+  
+      displayProducts_3(data.products);
+    } catch (err) {
+      console.log("Error", err);
+    }
+  }
+  babyMainPage3();
+  
+
 function displayProducts_1(data) {
-    data.map(({ image, gendar, size, description, exclusive, price }) => {
+    data.map(({ image, gender, size, description, exclusive, price, _id }) => {
         let mainDiv = document.createElement("div");
         let imgDiv = document.createElement("div");
         let sizeDiv = document.createElement("div");
@@ -179,11 +231,13 @@ function displayProducts_1(data) {
 
         let productsObj ={
             image,
-            gendar,
+            gender,
             size,
             description,
             exclusive,
-            price
+            price,
+            id: _id.substr(5,6),
+            quantity: 1
         }
 
         mainDiv.addEventListener("click", ()=>{
@@ -191,7 +245,7 @@ function displayProducts_1(data) {
         });
 
         img.src = image;
-        gend.innerText = gendar;
+        gend.innerText = gender;
         siz.innerText = size;
         desc.innerText = description;
         exclus.innerText = exclusive;
@@ -199,7 +253,7 @@ function displayProducts_1(data) {
 
         imgDiv.append(img);
         sizeDiv.append(gend, siz);
-        mainDiv.append(imgDiv, sizeDiv, desc, exclus, pric);
+        mainDiv.append(imgDiv, sizeDiv, desc, exclus, pric,);
 
         document.querySelector(".slideProducts1").append(mainDiv);
     });
@@ -207,9 +261,8 @@ function displayProducts_1(data) {
 }
 
 
-displayProducts_2(newArrivalObj_2);
 function displayProducts_2(data) {
-    data.map(({ image, gendar, size, description, exclusive, price }) => {
+    data.map(({ image, gender, size, description, exclusive, price, _id }) => {
         let mainDiv = document.createElement("div");
         let imgDiv = document.createElement("div");
         let sizeDiv = document.createElement("div");
@@ -227,11 +280,13 @@ function displayProducts_2(data) {
 
         let productsObj ={
             image,
-            gendar,
+            gender,
             size,
             description,
             exclusive,
-            price
+            price,
+            quantity:1,
+            id: _id.substr(5,6)
         }
 
         mainDiv.addEventListener("click", ()=>{
@@ -239,7 +294,7 @@ function displayProducts_2(data) {
         });
 
         img.src = image;
-        gend.innerText = gendar;
+        gend.innerText = gender;
         siz.innerText = size;
         desc.innerText = description;
         exclus.innerText = exclusive;
@@ -255,9 +310,8 @@ function displayProducts_2(data) {
 }
 
 
-displayProducts_3(newArrivalObj_3);
 function displayProducts_3(data) {
-    data.map(({ image, gendar, size, description, exclusive, price }) => {
+    data.map(({ image, gender, size, description, exclusive, price, _id }) => {
         let mainDiv = document.createElement("div");
         let imgDiv = document.createElement("div");
         let sizeDiv = document.createElement("div");
@@ -275,11 +329,13 @@ function displayProducts_3(data) {
 
         let productsObj ={
             image,
-            gendar,
+            gender,
             size,
             description,
             exclusive,
-            price
+            price,
+            quantity:1,
+            id: _id.substr(5,6)
         }
 
         mainDiv.addEventListener("click", ()=>{
@@ -287,7 +343,7 @@ function displayProducts_3(data) {
         });
 
         img.src = image;
-        gend.innerText = gendar;
+        gend.innerText = gender;
         siz.innerText = size;
         desc.innerText = description;
         exclus.innerText = exclusive;
