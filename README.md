@@ -3,7 +3,13 @@
 Construct Week Project 
 
 ## Key Links
-repo link - https://github.com/alokkumar-dev/uniqlo-clone
+Links for reference :
+
+Front-end Repo Link :
+https://github.com/alokkumar-dev/uniqlo-clone-2.git
+
+Backend Rep Link :
+https://github.com/Shreyasgkhakal100/uniqlo-backend-2.git
 
 Blog link - https://medium.com/@hgauba4/how-did-our-team-build-the-uniqlo-clone-2d78566e6935
 
