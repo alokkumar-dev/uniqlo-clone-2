@@ -1,44 +1,58 @@
-let newMenObj=[
-    {
-        image : "https://image.uniqlo.com/UQ/ST3/in/imagesgoods/437877/item/ingoods_12_437877.jpg?width=1008&impolicy=quality_75",
-        gender : "KIDS",
-        size  : "4-5Y(110)-14Y(160)",
-        name : "KIDS Uniqlo U AIRism Cotton Crew Neck T-Shirt",
-         desc : "New Color",
-        price :  990
-    },
-    {
-      image : "https://image.uniqlo.com/UQ/ST3/in/imagesgoods/446717/item/ingoods_10_446717.jpg?width=1008&impolicy=quality_75",
-      gender : "KIDS",
-      size  : "4-5Y(110)-14Y(160)",
-      name : "GIRLS Smooth Cotton Frill Short  Sleeve T-Shirt",
+// let newMenObj=[
+//     {
+//         image : "https://image.uniqlo.com/UQ/ST3/in/imagesgoods/437877/item/ingoods_12_437877.jpg?width=1008&impolicy=quality_75",
+//         gender : "KIDS",
+//         size  : "4-5Y(110)-14Y(160)",
+//         name : "KIDS Uniqlo U AIRism Cotton Crew Neck T-Shirt",
+//          desc : "New Color",
+//         price :  990
+//     },
+//     {
+//       image : "https://image.uniqlo.com/UQ/ST3/in/imagesgoods/446717/item/ingoods_10_446717.jpg?width=1008&impolicy=quality_75",
+//       gender : "KIDS",
+//       size  : "4-5Y(110)-14Y(160)",
+//       name : "GIRLS Smooth Cotton Frill Short  Sleeve T-Shirt",
    
-      desc : "New Arrival",
-      price :  990
-    },
-    {
-      image : "https://image.uniqlo.com/UQ/ST3/in/imagesgoods/448847/item/ingoods_09_448847.jpg?width=1008&impolicy=quality_75",
-      gender : "KIDS",
-      size  : "4-5YC110-14YC160)",
-      name : "GIRLS Easy Gingham Checked Shorts",
+//       desc : "New Arrival",
+//       price :  990
+//     },
+//     {
+//       image : "https://image.uniqlo.com/UQ/ST3/in/imagesgoods/448847/item/ingoods_09_448847.jpg?width=1008&impolicy=quality_75",
+//       gender : "KIDS",
+//       size  : "4-5YC110-14YC160)",
+//       name : "GIRLS Easy Gingham Checked Shorts",
      
-      desc :  "New Arrival",
-      price :  990
-    },
-    {
-      image : "https://image.uniqlo.com/UQ/ST3/in/imagesgoods/447997/item/ingoods_38_447997.jpg?width=1008&impolicy=quality_75",
-      gender : "KIDS",
-      size  : "4-5Y(110)-14Y(160)",
-      name : "KIDS Striped Short Sleeve T-Shirt",
-      desc :  "New Arrival",
-      price :  990
-    },
-  ]
+//       desc :  "New Arrival",
+//       price :  990
+//     },
+//     {
+//       image : "https://image.uniqlo.com/UQ/ST3/in/imagesgoods/447997/item/ingoods_38_447997.jpg?width=1008&impolicy=quality_75",
+//       gender : "KIDS",
+//       size  : "4-5Y(110)-14Y(160)",
+//       name : "KIDS Striped Short Sleeve T-Shirt",
+//       desc :  "New Arrival",
+//       price :  990
+//     },
+//   ]
+async function main1(){
+  let url = `https://uniqlo-clone.herokuapp.com/products?gender=KIDS&cat=KIDS-Main1`
+  try{
+    let res =await fetch(url);
+    let data =await res.json()
+    let x = data.products
+    displayprod(x)
+   // console.log(x)
+  }
+  catch(e){
+    console.log('e:', e)
+  }
+}
+main1()
   let product4 =document.getElementById("product4")
-  displayprod(newMenObj)
+ // displayprod(newMenObj)
   function displayprod(data){
   
-    data.map(({image,gender,size,name,desc,price})=>{
+    data.map(({image,gender,size,name,description,price,_id})=>{
        let div =document.createElement("div");
        let imgdiv = document.createElement("div");
        let sizediv =document.createElement("div");   
@@ -54,7 +68,7 @@ let newMenObj=[
        nam.textContent =name;
   
        let des = document.createElement("h3");
-       des.textContent =desc;
+       des.textContent =description;
        des.id ="desc"
   
        let pric = document.createElement("h5");
@@ -65,8 +79,9 @@ let newMenObj=[
            gender,
            size,
            name,
-           desc,
+           description,
            price,
+           id:_id.substr(5,6)
        };
 
        div.addEventListener("click",()=>{
@@ -86,53 +101,67 @@ let newMenObj=[
   }
 
   
-let newMenObj2= [
-    {
-      image : "https://image.uniqlo.com/UQ/ST3/in/imagesgoods/439815/item/ingoods_70_439815.jpg?width=1008&impolicy=quality_75",
-      gender : "KIDS",
-      size  : "4-5Y(110)-14Y(160)",
-      name :  "KIDS Light warm Padded Parka",
-      desc : "",
-      price :  2990,
+// let newMenObj2= [
+//     {
+//       image : "https://image.uniqlo.com/UQ/ST3/in/imagesgoods/439815/item/ingoods_70_439815.jpg?width=1008&impolicy=quality_75",
+//       gender : "KIDS",
+//       size  : "4-5Y(110)-14Y(160)",
+//       name :  "KIDS Light warm Padded Parka",
+//       desc : "",
+//       price :  2990,
      
-      star : "⭐⭐⭐⭐(19)",
-    },
-    {
-      image : "https://image.uniqlo.com/UQ/ST3/in/imagesgoods/439412/item/ingoods_70_439412.jpg?width=1008&impolicy=quality_75",
-      gender : "KIDS",
-      size  : "4-5Y(110)-14Y(160)",
-      name :  "KIDS Pile Lined Sweat Pants",
-      desc : "",
-      price : 690,
+//       star : "⭐⭐⭐⭐(19)",
+//     },
+//     {
+//       image : "https://image.uniqlo.com/UQ/ST3/in/imagesgoods/439412/item/ingoods_70_439412.jpg?width=1008&impolicy=quality_75",
+//       gender : "KIDS",
+//       size  : "4-5Y(110)-14Y(160)",
+//       name :  "KIDS Pile Lined Sweat Pants",
+//       desc : "",
+//       price : 690,
       
-      star : "⭐⭐⭐⭐(12)",
-    },
-    {
-      image : "https://image.uniqlo.com/UQ/ST3/in/imagesgoods/439328/item/ingoods_11_439328.jpg?width=1008&impolicy=quality_75",
-      gender : "KIDS",
-      size  : "4-5Y(110)-14Y(160)",
-      name : "KIDS Pile Lined Fleece Set (Long Sleeve)", 
-      desc : "",
-      price : 1990,
+//       star : "⭐⭐⭐⭐(12)",
+//     },
+//     {
+//       image : "https://image.uniqlo.com/UQ/ST3/in/imagesgoods/439328/item/ingoods_11_439328.jpg?width=1008&impolicy=quality_75",
+//       gender : "KIDS",
+//       size  : "4-5Y(110)-14Y(160)",
+//       name : "KIDS Pile Lined Fleece Set (Long Sleeve)", 
+//       desc : "",
+//       price : 1990,
    
-      star : "⭐⭐⭐⭐(29)",
-    },
-    {
-      image : "https://image.uniqlo.com/UQ/ST3/in/imagesgoods/439433/item/ingoods_09_439433.jpg?width=1008&impolicy=quality_75",
-      gender : "KIDS",
-      size  : "4-5Y(110)-14Y(160)",
-      name :  "KIDS Ultra Light Down Jacket (3D Cut)",
-      desc : "",
-      price : 1990,
+//       star : "⭐⭐⭐⭐(29)",
+//     },
+//     {
+//       image : "https://image.uniqlo.com/UQ/ST3/in/imagesgoods/439433/item/ingoods_09_439433.jpg?width=1008&impolicy=quality_75",
+//       gender : "KIDS",
+//       size  : "4-5Y(110)-14Y(160)",
+//       name :  "KIDS Ultra Light Down Jacket (3D Cut)",
+//       desc : "",
+//       price : 1990,
      
-      star : "⭐⭐⭐⭐(64)",
-    },
-  ]
+//       star : "⭐⭐⭐⭐(64)",
+//     },
+//   ]
+async function main2(){
+  let url = `https://uniqlo-clone.herokuapp.com/products?gender=KIDS&cat=KIDS-Main2`
+  try{
+    let res =await fetch(url);
+    let data =await res.json()
+    let x = data.products
+    limitedOffers(x)
+    //console.log(x)
+  }
+  catch(e){
+    console.log('e:', e)
+  }
+}
+main2()
    let limited_off =document.getElementById("limited_offer");
-   limitedOffers(newMenObj2)
+   
   function limitedOffers(data){
   
-    data.map(({image,gender,size,name,desc,price,star})=>{
+    data.map(({image,gender,size,name,description,price,star,_id})=>{
       let div =document.createElement("div");
       let imgdiv = document.createElement("div");
       let sizediv =document.createElement("div");   
@@ -161,8 +190,9 @@ let newMenObj2= [
         gender,
         size,
         name,
-        desc,
+        description,
         price,
+        id:_id.substr(5,6)
     };
 
     div.addEventListener("click",()=>{
@@ -181,57 +211,72 @@ let newMenObj2= [
 }
 
 
-let newMenObj3= [
-    {
-      image : "https://image.uniqlo.com/UQ/ST3/in/imagesgoods/439631/item/ingoods_69_439631.jpg?width=1008&impolicy=quality_75",
-      gender : "KIDS",
-      size  : "4-5Y(110)-14Y(160)",
-      name :  "KIDS Frill Sleeve Long Sleeve T-Shirt",
-     desc : "",
-      striked_price : "Rs. 990.00",
-      price : 590,
-      limited : "Sale",
-      star : "⭐⭐⭐⭐⭐(1)",
-    },
-    {
-      image : "https://image.uniqlo.com/UQ/ST3/in/imagesgoods/439305/item/ingoods_30_439305.jpg?width=1008&impolicy=quality_75",
-      gender : "KIDS",
-      size  : "4-5Y(110)-14Y(160)",
-      name :  "KIDS Smart Ankle Trousers 2WAY Stretch Cotton",
-      desc : "",
-      striked_price :"Rs. 2,490.00",
-      price : 1490,
-      limited : "Sale",
-      star : "",
-    },
-    {
-      image : "https://image.uniqlo.com/UQ/ST3/in/imagesgoods/425209/item/ingoods_02_425209.jpg?width=1008&impolicy=quality_75",
-      gender : "KIDS",
-      size  : "4-5Y(110)-14Y(160)",
-      name : "KIDS Souffle Yarn Mock Neck Long Sleeve Sweater", 
-      desc : "",
-      striked_price :"Rs. 1,290.00",
-      price :990,
-      limited :"Sale",
-      star : "⭐⭐⭐⭐(2)",
-    },
-    {
-      image : "https://image.uniqlo.com/UQ/ST3/in/imagesgoods/439321/item/ingoods_60_439321.jpg?width=1008&impolicy=quality_75",
-      gender : "KIDS",
-      size  : "4-5Y(110)-14Y(160)",
-      name :  "KIDS Supima Cotton Oversized Stand Collar Shirt",
-      desc : "",
-      striked_price : "Rs. 1,290.00",
-      price : 990,
-      limited : "Sale",
-      star : "",
-    },
-  ]
+// let newMenObj3= [
+//     {
+//       image : "https://image.uniqlo.com/UQ/ST3/in/imagesgoods/439631/item/ingoods_69_439631.jpg?width=1008&impolicy=quality_75",
+//       gender : "KIDS",
+//       size  : "4-5Y(110)-14Y(160)",
+//       name :  "KIDS Frill Sleeve Long Sleeve T-Shirt",
+//      desc : "",
+//       striked_price : "Rs. 990.00",
+//       price : 590,
+//       limited : "Sale",
+//       star : "⭐⭐⭐⭐⭐(1)",
+//     },
+//     {
+//       image : "https://image.uniqlo.com/UQ/ST3/in/imagesgoods/439305/item/ingoods_30_439305.jpg?width=1008&impolicy=quality_75",
+//       gender : "KIDS",
+//       size  : "4-5Y(110)-14Y(160)",
+//       name :  "KIDS Smart Ankle Trousers 2WAY Stretch Cotton",
+//       desc : "",
+//       striked_price :"Rs. 2,490.00",
+//       price : 1490,
+//       limited : "Sale",
+//       star : "",
+//     },
+//     {
+//       image : "https://image.uniqlo.com/UQ/ST3/in/imagesgoods/425209/item/ingoods_02_425209.jpg?width=1008&impolicy=quality_75",
+//       gender : "KIDS",
+//       size  : "4-5Y(110)-14Y(160)",
+//       name : "KIDS Souffle Yarn Mock Neck Long Sleeve Sweater", 
+//       desc : "",
+//       striked_price :"Rs. 1,290.00",
+//       price :990,
+//       limited :"Sale",
+//       star : "⭐⭐⭐⭐(2)",
+//     },
+//     {
+//       image : "https://image.uniqlo.com/UQ/ST3/in/imagesgoods/439321/item/ingoods_60_439321.jpg?width=1008&impolicy=quality_75",
+//       gender : "KIDS",
+//       size  : "4-5Y(110)-14Y(160)",
+//       name :  "KIDS Supima Cotton Oversized Stand Collar Shirt",
+//       desc : "",
+//       striked_price : "Rs. 1,290.00",
+//       price : 990,
+//       limited : "Sale",
+//       star : "",
+//     },
+//   ]
+
+async function main3(){
+  let url = `https://uniqlo-clone.herokuapp.com/products?gender=KIDS&cat=KIDS-Main3`
+  try{
+    let res =await fetch(url);
+    let data =await res.json()
+    let x = data.products
+    SaleOffers(x)
+    //console.log(x)
+  }
+  catch(e){
+    console.log('e:', e)
+  }
+}
+main3()
    let sale =document.getElementById("sale_product")
-   SaleOffers(newMenObj3)
+   
   function  SaleOffers(data){
   
-    data.map(({image,gender,size,name,desc,striked_price,price,limited,star})=>{
+    data.map(({image,gender,size,name,description,striked_price,price,limited,star,_id})=>{
       let div =document.createElement("div");
       let imgdiv = document.createElement("div");
       let sizediv =document.createElement("div");   
@@ -247,7 +292,7 @@ let newMenObj3= [
       nam.textContent =name;
   
       let des = document.createElement("p");
-      des.textContent = desc;
+      des.textContent = description;
     //   des.id ="desc"
   
       let striked = document.createElement("p");
@@ -269,8 +314,9 @@ let newMenObj3= [
         gender,
         size,
         name,
-        desc,
+        description,
         price,
+        id:_id.substr(5,6)
     };
 
     div.addEventListener("click",()=>{
@@ -288,51 +334,64 @@ let newMenObj3= [
   }
   
  
-let newMenObj4=[
-    {
-        image : "https://image.uniqlo.com/UQ/ST3/in/imagesgoods/444912/item/ingoods_30_444912.jpg?width=1008&impolicy=quality_75",
-        gender : "KIDS",
-        size  : "4-5Y(110)-14Y(160)",
-        name : "KIDS Extra Stretch Dry Sweat Long Sleeve Full-Zip Hoodie",
-          desc : "",
-        price : 1990,
-        star : "",
-    },
-    {
-      image : "https://image.uniqlo.com/UQ/ST3/in/imagesgoods/444918/item/ingoods_09_444918.jpg?width=1008&impolicy=quality_75",
-      gender : "KIDS",
-      size  :  "4-5Y(110)-14Y(160)",
-      name : "KIDS Extra Stretch Dry Sweat Trousers",
+// let newMenObj4=[
+//     {
+//         image : "https://image.uniqlo.com/UQ/ST3/in/imagesgoods/444912/item/ingoods_30_444912.jpg?width=1008&impolicy=quality_75",
+//         gender : "KIDS",
+//         size  : "4-5Y(110)-14Y(160)",
+//         name : "KIDS Extra Stretch Dry Sweat Long Sleeve Full-Zip Hoodie",
+//           desc : "",
+//         price : 1990,
+//         star : "",
+//     },
+//     {
+//       image : "https://image.uniqlo.com/UQ/ST3/in/imagesgoods/444918/item/ingoods_09_444918.jpg?width=1008&impolicy=quality_75",
+//       gender : "KIDS",
+//       size  :  "4-5Y(110)-14Y(160)",
+//       name : "KIDS Extra Stretch Dry Sweat Trousers",
       
-      desc : "New Color",
-      price : 1290,
-      star : "⭐⭐⭐⭐⭐(3)",
-    },
-    {
-      image : "https://image.uniqlo.com/UQ/ST3/in/imagesgoods/439366/item/ingoods_08_439366.jpg?width=1008&impolicy=quality_75",
-      gender : "KIDS",
-      size  :  "4-5Y(110)-14Y(160)",
-      name :  "KIDS Extra Stretch Dry Sweat Sleeve",
-      desc : "Exclusive Size Online Only",
-      price : 1990,
-      star : "⭐⭐⭐⭐⭐(1)",
-    },
-    {
-      image : "https://image.uniqlo.com/UQ/ST3/in/imagesgoods/444913/item/ingoods_03_444913.jpg?width=1008&impolicy=quality_75",
-      gender : "KIDS",
-      size  :  "4-5Y(110)-14Y(160)",
-      name : "KIDS Ultra Stretch Dry Sweat Trousers",
-      desc : "Limited Store",
-      price : 1290,
-      star : "",
-    },
-  ]
-  
+//       desc : "New Color",
+//       price : 1290,
+//       star : "⭐⭐⭐⭐⭐(3)",
+//     },
+//     {
+//       image : "https://image.uniqlo.com/UQ/ST3/in/imagesgoods/439366/item/ingoods_08_439366.jpg?width=1008&impolicy=quality_75",
+//       gender : "KIDS",
+//       size  :  "4-5Y(110)-14Y(160)",
+//       name :  "KIDS Extra Stretch Dry Sweat Sleeve",
+//       desc : "Exclusive Size Online Only",
+//       price : 1990,
+//       star : "⭐⭐⭐⭐⭐(1)",
+//     },
+//     {
+//       image : "https://image.uniqlo.com/UQ/ST3/in/imagesgoods/444913/item/ingoods_03_444913.jpg?width=1008&impolicy=quality_75",
+//       gender : "KIDS",
+//       size  :  "4-5Y(110)-14Y(160)",
+//       name : "KIDS Ultra Stretch Dry Sweat Trousers",
+//       desc : "Limited Store",
+//       price : 1290,
+//       star : "",
+//     },
+//   ]
+async function main4(){
+  let url = `https://uniqlo-clone.herokuapp.com/products?gender=KIDS&cat=KIDS-Main4`
+  try{
+    let res =await fetch(url);
+    let data =await res.json()
+    let x = data.products
+    featureprod(x)
+    console.log(x)
+  }
+  catch(e){
+    console.log('e:', e)
+  }
+}
+main4()
   let feature =document.getElementById("featured_offer")
-  featureprod(newMenObj4)
+  //featureprod(newMenObj4)
   function featureprod(data){
   
-    data.map(({image,gender,size,name,desc,price,star})=>{
+    data.map(({image,gender,size,name,description,price,star,_id})=>{
        let div =document.createElement("div");
        let imgdiv = document.createElement("div");
        let sizediv =document.createElement("div");   
@@ -348,7 +407,7 @@ let newMenObj4=[
        nam.textContent =name;
   
        let des = document.createElement("h3");
-       des.textContent =desc;
+       des.textContent =description;
        des.id ="desc"
   
        let pric = document.createElement("h4");
@@ -362,8 +421,9 @@ let newMenObj4=[
         gender,
         size,
         name,
-        desc,
+        description,
         price,
+        id:_id.substr(5,6)
     };
 
     div.addEventListener("click",()=>{
@@ -561,3 +621,11 @@ let morefeaturedobj3 =[
       localStorage.setItem("uniqProd",JSON.stringify(data));
       window.location.href = "./productinfo.html"
   }
+
+  let move =document.querySelectorAll("#kidmov");
+
+  move.forEach((elem)=>{
+    elem.addEventListener("click",()=>{
+      window.location.href ="kids_bottoms.html"
+    })
+  })
