@@ -1,71 +1,85 @@
-const newArrivalObj_1 = [
-    {
-        image: "https://image.uniqlo.com/UQ/ST3/in/imagesgoods/444918/item/ingoods_09_444918.jpg?width=1008&impolicy=quality_75",
-        gendar: "KIDS",
-        size: "4-5Y(110)-14Y(160)",
-        name: "KIDS Fluffy Yarn Fleece Full-Zip Jecket",
-       desc: "New Color",
-        price: 690,
-        id : 445205,
-    },
-    {
-        image: "https://image.uniqlo.com/UQ/ST3/in/imagesgoods/439625/item/ingoods_09_439625.jpg?width=1008&impolicy=quality_75",
-        gendar: "KIDS",
-        size: "4-5Y(110)-14Y(160)",
-        name: "KIDS AIRism UV Protection Soft Leggings",
+// const newArrivalObj_1 = [
+//     {
+//         image: "https://image.uniqlo.com/UQ/ST3/in/imagesgoods/444918/item/ingoods_09_444918.jpg?width=1008&impolicy=quality_75",
+//         gender: "KIDS",
+//         size: "4-5Y(110)-14Y(160)",
+//         name: "KIDS Fluffy Yarn Fleece Full-Zip Jecket",
+//        desc: "New Color",
+//         price: 690,
+//         id : 445205,
+//     },
+//     {
+//         image: "https://image.uniqlo.com/UQ/ST3/in/imagesgoods/439625/item/ingoods_09_439625.jpg?width=1008&impolicy=quality_75",
+//         gendar: "KIDS",
+//         size: "4-5Y(110)-14Y(160)",
+//         name: "KIDS AIRism UV Protection Soft Leggings",
        
-        desc: "",
-        price: 2490,
-        id : 445209,
-    },
+//         desc: "",
+//         price: 2490,
+//         id : 445209,
+//     },
 
-    {
-        image: "https://image.uniqlo.com/UQ/ST3/in/imagesgoods/439624/item/ingoods_12_439624.jpg?width=1008&impolicy=quality_75",
-        gendar: "KIDS",
-        size: "4-5Y(110)-14Y(160)",
-        name: "KIDS AIRism UV Protection Soft Leggings",
+//     {
+//         image: "https://image.uniqlo.com/UQ/ST3/in/imagesgoods/439624/item/ingoods_12_439624.jpg?width=1008&impolicy=quality_75",
+//         gendar: "KIDS",
+//         size: "4-5Y(110)-14Y(160)",
+//         name: "KIDS AIRism UV Protection Soft Leggings",
        
-        desc: "",
-        price: 1290,
-        id : 445215,
-    },
-    {
-        image: "https://image.uniqlo.com/UQ/ST3/in/imagesgoods/434149/item/ingoods_30_434149.jpg?width=1008&impolicy=quality_75",
-        gendar: "KIDS",
-        size: "4-5Y(110)-14Y(160)",
-        name: "KIDS Ultra Stretch Dry Sweat Pants",
+//         desc: "",
+//         price: 1290,
+//         id : 445215,
+//     },
+//     {
+//         image: "https://image.uniqlo.com/UQ/ST3/in/imagesgoods/434149/item/ingoods_30_434149.jpg?width=1008&impolicy=quality_75",
+//         gendar: "KIDS",
+//         size: "4-5Y(110)-14Y(160)",
+//         name: "KIDS Ultra Stretch Dry Sweat Pants",
        
-        desc: "",
-        price: 1990,
-        id : 445203,
-    },
-    {
-        image: "https://image.uniqlo.com/UQ/ST3/in/imagesgoods/434157/item/ingoods_69_434157.jpg?width=1008&impolicy=quality_75",
-        gendar: "KIDS",
-        size: "4-5Y(110)-14Y(160)",
-        name: "KIDS Extra Stretch Active Jogger Pants",
+//         desc: "",
+//         price: 1990,
+//         id : 445203,
+//     },
+//     {
+//         image: "https://image.uniqlo.com/UQ/ST3/in/imagesgoods/434157/item/ingoods_69_434157.jpg?width=1008&impolicy=quality_75",
+//         gendar: "KIDS",
+//         size: "4-5Y(110)-14Y(160)",
+//         name: "KIDS Extra Stretch Active Jogger Pants",
        
-        desc: "",
-        price: 2490,
-        id : 445255,
-    },
-    {
-        image: "https://image.uniqlo.com/UQ/ST3/in/imagesgoods/434158/item/ingoods_09_434158.jpg?width=1008&impolicy=quality_75",
-        gendar: "KIDS",
-        size: "4-5Y(110)-14Y(160)",
-        name: "KIDS Extra  Stretch Active Shorts",
+//         desc: "",
+//         price: 2490,
+//         id : 445255,
+//     },
+//     {
+//         image: "https://image.uniqlo.com/UQ/ST3/in/imagesgoods/434158/item/ingoods_09_434158.jpg?width=1008&impolicy=quality_75",
+//         gendar: "KIDS",
+//         size: "4-5Y(110)-14Y(160)",
+//         name: "KIDS Extra  Stretch Active Shorts",
        
-        desc: "",
-        price: 990,
-        id : 445299,
-    },
-];
+//         desc: "",
+//         price: 990,
+//         id : 445299,
+//     },
+// ];
 // console.log(newArrivalObj_1[0].price+newArrivalObj_1[1].price);
+async function main4(){
+    let url = `https://uniqlo-clone.herokuapp.com/products?gender=KIDS&cat=KIDS-Bottoms`
+    try{
+      let res =await fetch(url);
+      let data =await res.json()
+      let x = data.products
+      displayProducts_1(x);
+      console.log(x)
+    }
+    catch(e){
+      console.log('e:', e)
+    }
+  }
+  main4()
 
-displayProducts_1(newArrivalObj_1);
+
 function displayProducts_1(data) {
     document.querySelector(".productSide").innerHTML="";
-    data.map(({ image, gendar, size, name,desc, price,id }) => {
+    data.map(({ image, gender, size, name,description, price,_id }) => {
         let mainDiv = document.createElement("div");
         let imgDiv = document.createElement("div");
         let sizeDiv = document.createElement("div");
@@ -86,24 +100,24 @@ function displayProducts_1(data) {
 
         let productsObj = {
             image,
-            gendar,
+            gender,
             size,
             name,
-            desc,
+            description,
             price,
-            id
+            id:_id.substr(5,6)
         }
         mainDiv.addEventListener("click", () => {
             storeData(productsObj);
         });
 
         img.src = image;
-        gend.innerText = gendar;
+        gend.innerText = gender;
         siz.innerText = size;
         des.innerText = name;
-        exclus.innerText = desc;
+        exclus.innerText =description;
         pric.innerText = `Rs. ${price}.00`;
-        productid =id
+        productid.innerText =_id
 
         imgDiv.append(img);
         sizeDiv.append(gend, siz);
