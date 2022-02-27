@@ -78,44 +78,46 @@
 
 // displayProducts_1(newArrivalObj_1);
 
-async function searchVideo() {
+let data;
+async function ultraLightProduct() {
   try {
     let responce = await fetch(
       `https://uniqlo-clone.herokuapp.com/products?gender=WOMEN&cat=Women-ultra-light-down`
     );
 
-    let data = await responce.json();
-    console.log("Data : ", data.products);
+    data = await responce.json();
+    data = data.products;
+    console.log("Data : ", data);
 
-    displayProducts_1(data.products);
+    displayProducts_1(data);
   } catch (err) {
     console.log("Error", err);
   }
 }
-searchVideo();
+ultraLightProduct();
 
 var sort = document.getElementById("sortProduct");
 sort.addEventListener("change", function priceSort() {
   var selected = document.getElementById("sortProduct").value;
   if (selected == "low") {
-    newArrivalObj_1.sort(function (a, b) {
+    data.sort(function (a, b) {
       // console.log(a.price)
       return a.price - b.price;
     });
   }
   if (selected == "high") {
-    newArrivalObj_1.sort(function (a, b) {
+    data.sort(function (a, b) {
       // console.log(b.price)
       return b.price - a.price;
     });
   }
 
-  displayProducts_1(newArrivalObj_1);
+  displayProducts_1(data);
 });
 
 function displayProducts_1(data) {
   document.querySelector(".productSide").innerHTML = "";
-  data.map(({ image, category, size, description, name, price, _id }) => {
+  data.map(({ image, gender, size, description, exclusive, price, _id }) => {
     let mainDiv = document.createElement("div");
     let imgDiv = document.createElement("div");
     let sizeDiv = document.createElement("div");
@@ -133,10 +135,10 @@ function displayProducts_1(data) {
 
     let productsObj = {
       image,
-      category,
+      gender,
       size,
       description,
-      name,
+      exclusive,
       price,
       id: _id.substr(5, 6),
       quantity: 1,
@@ -146,10 +148,10 @@ function displayProducts_1(data) {
     });
 
     img.src = image;
-    gend.innerText = category;
+    gend.innerText = gender;
     siz.innerText = size;
     desc.innerText = description;
-    exclus.innerText = name;
+    exclus.innerText = exclusive;
     pric.innerText = `Rs. ${price}.00`;
 
     imgDiv.append(img);

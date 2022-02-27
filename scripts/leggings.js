@@ -1,103 +1,116 @@
-const newArrivalObj_1 = [
-    {
-        image: "https://image.uniqlo.com/UQ/ST3/in/imagesgoods/446503/item/ingoods_12_446503.jpg?width=1600&impolicy=quality_75",
-        gendar: "WOMEN",
-        size: "S-XXL",
-        description: "WOMEN AIRism UV Protection Soft Leggings",
-        exclusive: "Exclusive Size Online Only",
-        price: 1990,
-        id: 445346
-    },
-    {
-        image: "https://image.uniqlo.com/UQ/ST3/in/imagesgoods/446503/item/ingoods_67_446503.jpg?width=1600&impolicy=quality_75",
-        gendar: "WOMEN",
-        size: "S-3XL",
-        description: "WOMEN Ultra Light Down Parka",
-        exclusive: "Exclusive Size Online Only",
-        price: 1990,
-        id: 445347
-    },
+// const newArrivalObj_1 = [
+//     {
+//         image: "https://image.uniqlo.com/UQ/ST3/in/imagesgoods/446503/item/ingoods_12_446503.jpg?width=1600&impolicy=quality_75",
+//         gendar: "WOMEN",
+//         size: "S-XXL",
+//         description: "WOMEN AIRism UV Protection Soft Leggings",
+//         exclusive: "Exclusive Size Online Only",
+//         price: 1990,
+//         id: 445346
+//     },
+//     {
+//         image: "https://image.uniqlo.com/UQ/ST3/in/imagesgoods/446503/item/ingoods_67_446503.jpg?width=1600&impolicy=quality_75",
+//         gendar: "WOMEN",
+//         size: "S-3XL",
+//         description: "WOMEN Ultra Light Down Parka",
+//         exclusive: "Exclusive Size Online Only",
+//         price: 1990,
+//         id: 445347
+//     },
 
-    {
-        image: "https://image.uniqlo.com/UQ/ST3/in/imagesgoods/433741/item/ingoods_11_433741.jpg?width=1600&impolicy=quality_75",
-        gendar: "WOMEN",
-        size: "S-XXL",
-        description: "WOMEN Extra Stretch High Rise Leggings Trousers",
-        exclusive: "Exclusive Size Online Only",
-        price: 2990,
-        id: 445348
-    },
-    {
-        image: "https://image.uniqlo.com/UQ/ST3/in/imagesgoods/439241/item/ingoods_18_439241.jpg?width=1600&impolicy=quality_75",
-        gendar: "WOMEN",
-        size: "S",
-        description: "WOMEN Ultra Light Down Jecket",
-        exclusive: "Exclusive Size Online Only",
-        price: 1490,
-        id: 445349
-    },
-    {
-        image: "https://image.uniqlo.com/UQ/ST3/in/imagesgoods/439241/item/ingoods_01_439241.jpg?width=1600&impolicy=quality_75",
-        gendar: "WOMEN",
-        size: "S",
-        description: "WOMEN Ultra Light Down Jecket",
-        exclusive: "Exclusive Size Online Only",
-        price: 2490,
-        id: 445350
-    },
-    {
-        image: "https://image.uniqlo.com/UQ/ST3/in/imagesgoods/439707/item/ingoods_56_439707.jpg?width=1008&impolicy=quality_75",
-        gendar: "WOMEN",
-        size: "S-3XL",
-        description: "WOMEN Extra Stretch High Rise Leggings Trousers",
-        exclusive: "Exclusive Size Online Only",
-        price: 1990,
-        id: 445351
-    },
-    {
-        image: "https://image.uniqlo.com/UQ/ST3/in/imagesgoods/439241/item/ingoods_34_439241.jpg?width=1600&impolicy=quality_75",
-        gendar: "WOMEN",
-        size: "S-3XL",
-        description: "WOMEN Extra Stretch High Rise Leggings Trousers",
-        exclusive: "Exclusive Size Online Only",
-        price: 2990,
-        id: 445352
-    },
-    {
-        image: "https://image.uniqlo.com/UQ/ST3/in/imagesgoods/439241/item/ingoods_54_439241.jpg?width=1600&impolicy=quality_75",
-        gendar: "WOMEN",
-        size: "S",
-        description: "WOMEN Ultra Light Down Parka",
-        exclusive: "Exclusive Size Online Only",
-        price: 1490,
-        id: 445353
-    },
-    {
-        image: "https://image.uniqlo.com/UQ/ST3/in/imagesgoods/433741/item/ingoods_57_433741.jpg?width=1600&impolicy=quality_75",
-        gendar: "WOMEN",
-        size: "S-3XL",
-        description: "WOMEN Light Pile Lined Fleece Long Sleeve Set",
-        exclusive: "Exclusive Size Online Only",
-        price: 2990,
-        id: 445355
-    },
-    {
-        image: "https://image.uniqlo.com/UQ/ST3/in/imagesgoods/433741/item/ingoods_19_433741.jpg?width=1600&impolicy=quality_75",
-        gendar: "WOMEN",
-        size: "SX-XXL",
-        description: "WOMEN Extra Stretch High Rise Leggings Trousers",
-        exclusive: "Exclusive Size Online Only",
-        price: 1990,
-        id: 4453456
-    }
+//     {
+//         image: "https://image.uniqlo.com/UQ/ST3/in/imagesgoods/433741/item/ingoods_11_433741.jpg?width=1600&impolicy=quality_75",
+//         gendar: "WOMEN",
+//         size: "S-XXL",
+//         description: "WOMEN Extra Stretch High Rise Leggings Trousers",
+//         exclusive: "Exclusive Size Online Only",
+//         price: 2990,
+//         id: 445348
+//     },
+//     {
+//         image: "https://image.uniqlo.com/UQ/ST3/in/imagesgoods/439241/item/ingoods_18_439241.jpg?width=1600&impolicy=quality_75",
+//         gendar: "WOMEN",
+//         size: "S",
+//         description: "WOMEN Ultra Light Down Jecket",
+//         exclusive: "Exclusive Size Online Only",
+//         price: 1490,
+//         id: 445349
+//     },
+//     {
+//         image: "https://image.uniqlo.com/UQ/ST3/in/imagesgoods/439241/item/ingoods_01_439241.jpg?width=1600&impolicy=quality_75",
+//         gendar: "WOMEN",
+//         size: "S",
+//         description: "WOMEN Ultra Light Down Jecket",
+//         exclusive: "Exclusive Size Online Only",
+//         price: 2490,
+//         id: 445350
+//     },
+//     {
+//         image: "https://image.uniqlo.com/UQ/ST3/in/imagesgoods/439707/item/ingoods_56_439707.jpg?width=1008&impolicy=quality_75",
+//         gendar: "WOMEN",
+//         size: "S-3XL",
+//         description: "WOMEN Extra Stretch High Rise Leggings Trousers",
+//         exclusive: "Exclusive Size Online Only",
+//         price: 1990,
+//         id: 445351
+//     },
+//     {
+//         image: "https://image.uniqlo.com/UQ/ST3/in/imagesgoods/439241/item/ingoods_34_439241.jpg?width=1600&impolicy=quality_75",
+//         gendar: "WOMEN",
+//         size: "S-3XL",
+//         description: "WOMEN Extra Stretch High Rise Leggings Trousers",
+//         exclusive: "Exclusive Size Online Only",
+//         price: 2990,
+//         id: 445352
+//     },
+//     {
+//         image: "https://image.uniqlo.com/UQ/ST3/in/imagesgoods/439241/item/ingoods_54_439241.jpg?width=1600&impolicy=quality_75",
+//         gendar: "WOMEN",
+//         size: "S",
+//         description: "WOMEN Ultra Light Down Parka",
+//         exclusive: "Exclusive Size Online Only",
+//         price: 1490,
+//         id: 445353
+//     },
+//     {
+//         image: "https://image.uniqlo.com/UQ/ST3/in/imagesgoods/433741/item/ingoods_57_433741.jpg?width=1600&impolicy=quality_75",
+//         gendar: "WOMEN",
+//         size: "S-3XL",
+//         description: "WOMEN Light Pile Lined Fleece Long Sleeve Set",
+//         exclusive: "Exclusive Size Online Only",
+//         price: 2990,
+//         id: 445355
+//     },
+//     {
+//         image: "https://image.uniqlo.com/UQ/ST3/in/imagesgoods/433741/item/ingoods_19_433741.jpg?width=1600&impolicy=quality_75",
+//         gendar: "WOMEN",
+//         size: "SX-XXL",
+//         description: "WOMEN Extra Stretch High Rise Leggings Trousers",
+//         exclusive: "Exclusive Size Online Only",
+//         price: 1990,
+//         id: 4453456
+//     }
 
-];
+// ];
 // console.log(newArrivalObj_1[0].price+newArrivalObj_1[1].price);
+let data;
+async function leggingsProduct(){
+    try{
+        const responce = await fetch("https://uniqlo-clone.herokuapp.com/products?gender=WOMEN&cat=Women-leggings");
+        data = await responce.json();
+        data = data.products;
+        console.log("data", data);
+        displayProducts_1(data);
+    }
+    catch(err){
+        console.log("Error : ", error.message);
+    }
+}
+leggingsProduct();
 
-displayProducts_1(newArrivalObj_1);
 function displayProducts_1(data) {
     document.querySelector(".productSide").innerHTML="";
-    data.map(({ image, gendar, size, description, exclusive, price ,id}) => {
+    data.map(({ image, gender, size, description, exclusive, price ,_id}) => {
         let mainDiv = document.createElement("div");
         let imgDiv = document.createElement("div");
         let sizeDiv = document.createElement("div");
@@ -116,12 +129,12 @@ function displayProducts_1(data) {
 
         let productsObj = {
             image,
-            gendar,
+            gender,
             size,
             description,
             exclusive,
             price,
-            id,
+            id: _id.substr(5, 6),
             quantity: 1,
         }
         mainDiv.addEventListener("click", () => {
@@ -129,7 +142,7 @@ function displayProducts_1(data) {
         });
 
         img.src = image;
-        gend.innerText = gendar;
+        gend.innerText = gender;
         siz.innerText = size;
         desc.innerText = description;
         exclus.innerText = exclusive;
@@ -148,20 +161,20 @@ var sort = document.getElementById("sortProduct");
 sort.addEventListener("change", function priceSort() {
     var selected = document.getElementById("sortProduct").value;
     if (selected == "low") {
-        newArrivalObj_1.sort(function (a, b) {
+        data.sort(function (a, b) {
             // console.log(a.price)
             return a.price - b.price;
 
         })
     }
     if (selected == "high") {
-        newArrivalObj_1.sort(function (a, b) {
+        data.sort(function (a, b) {
             // console.log(b.price)
             return b.price - a.price;
         })
     }
     
-    displayProducts_1(newArrivalObj_1);
+    displayProducts_1(data);
 });
 // Store Data in localStorage here..
 

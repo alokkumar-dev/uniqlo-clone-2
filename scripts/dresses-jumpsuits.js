@@ -1,112 +1,126 @@
-const newArrivalObj_1 = [
-    {
-        image: "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/448954/sub/goods_448954_sub9.jpg?width=1600&impolicy=quality_75",
-        gendar: "WOMEN",
-        size: "XS-XL",
-        description: "WOMEN Striped Boat Neck Long Sleeve Dress",
-        exclusive: "Exclusive Size Online Only",
-        price: 2490,
-        id: 445345
-    },
-    {
-        image: "https://image.uniqlo.com/UQ/ST3/in/imagesgoods/447403/item/ingoods_65_447403.jpg?width=1600&impolicy=quality_75",
-        gendar: "WOMEN",
-        size: "S-3XL",
-        description: "WOMEN Striped Boat Neck Long Sleeve Dress",
-        exclusive: "Exclusive Size Online Only",
-        price: 2490,
-        id: 445344
-    },
+// const newArrivalObj_1 = [
+//     {
+//         image: "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/448954/sub/goods_448954_sub9.jpg?width=1600&impolicy=quality_75",
+//         gender: "WOMEN",
+//         size: "XS-XL",
+//         description: "WOMEN Striped Boat Neck Long Sleeve Dress",
+//         exclusive: "Exclusive Size Online Only",
+//         price: 2490,
+//         id: 445345
+//     },
+//     {
+//         image: "https://image.uniqlo.com/UQ/ST3/in/imagesgoods/447403/item/ingoods_65_447403.jpg?width=1600&impolicy=quality_75",
+//         gender: "WOMEN",
+//         size: "S-3XL",
+//         description: "WOMEN Striped Boat Neck Long Sleeve Dress",
+//         exclusive: "Exclusive Size Online Only",
+//         price: 2490,
+//         id: 445344
+//     },
 
-    {
-        image: "https://image.uniqlo.com/UQ/ST3/in/imagesgoods/429452/item/ingoods_09_429452.jpg?width=1008&impolicy=quality_75",
-        gendar: "WOMEN",
-        size: "S-XXL",
-        description: "WOMEN Ultra Light Down Vest",
-        exclusive: "Exclusive Size Online Only",
-        price: 2990,
-        id: 445343
-    },
-    {
-        image: "https://image.uniqlo.com/UQ/ST3/in/imagesgoods/445115/item/ingoods_01_445115.jpg?width=1600&impolicy=quality_75",
-        gendar: "WOMEN",
-        size: "XS-XXL",
-        description: "WOMEN Waffle Crew Neck Long Sleeve Dress",
-        exclusive: "Exclusive Size Online Only",
-        price: 2490,
-        id: 445342
-    },
-    {
-        image: "https://image.uniqlo.com/UQ/ST3/in/imagesgoods/445115/item/ingoods_09_445115.jpg?width=1600&impolicy=quality_75",
-        gendar: "WOMEN",
-        size: "S-3XL",
-        description: "WOMEN Ultra Light Down Relaxed Jecket",
-        exclusive: "Exclusive Size Online Only",
-        price: 2490,
-        id: 445341
-    },
-    {
-        image: "https://image.uniqlo.com/UQ/ST3/in/imagesgoods/445115/item/ingoods_71_445115.jpg?width=1600&impolicy=quality_75",
-        gendar: "WOMEN",
-        size: "XS",
-        description: "WOMEN Ultra Light Down Parka",
-        exclusive: "Exclusive Size Online Only",
-        price: 2990,
-        id: 445340
-    },
-    {
-        image: "https://image.uniqlo.com/UQ/ST3/in/imagesgoods/445050001/item/ingoods_71_445050001.jpg?width=1600&impolicy=quality_75",
-        gendar: "WOMEN",
-        size: "XS-3XL",
-        description: "WOMEN Light Pile Lined Fleece Long Sleeve Set",
-        exclusive: "Exclusive Size Online Only",
-        price: 2990,
-        id: 445339
-    },
-    {
-        image: "https://image.uniqlo.com/UQ/ST3/in/imagesgoods/445050001/item/ingoods_69_445050001.jpg?width=1600&impolicy=quality_75",
-        gendar: "WOMEN",
-        size: "SX-XXL",
-        description: "WOMEN Fluffy Yarn Fleece Full-Zip Jecket",
-        exclusive: "Exclusive Size Online Only",
-        price: 3990,
-        id: 44538
-    },
-    {
-        image: "https://image.uniqlo.com/UQ/ST3/in/imagesgoods/439753/item/ingoods_08_439753.jpg?width=1600&impolicy=quality_75",
-        gendar: "WOMEN",
-        size: "XS-3XL",
-        description: "WOMEN Soft Flannel Long Sleeve Flare Dress",
-        exclusive: "Exclusive Size Online Only",
-        price: 2990,
-        id: 445337
-    },
-    {
-        image: "https://image.uniqlo.com/UQ/ST3/in/imagesgoods/439753/item/ingoods_33_439753.jpg?width=1600&impolicy=quality_75",
-        gendar: "WOMEN",
-        size: "SX-XXL",
-        description: "WOMEN Fluffy Yarn Fleece Full-Zip Jecket",
-        exclusive: "Exclusive Size Online Only",
-        price: 3990,
-        id: 445336
-    },
-    {
-        image: "https://image.uniqlo.com/UQ/ST3/in/imagesgoods/443422001/item/ingoods_07_443422001.jpg?width=1600&impolicy=quality_75",
-        gendar: "WOMEN",
-        size: "SX-XL",
-        description: "WOMEN Soft Flannel Long Sleeve Flare Dress",
-        exclusive: "Exclusive Size Online Only",
-        price: 1990,
-        id: 445335
-    }
+//     {
+//         image: "https://image.uniqlo.com/UQ/ST3/in/imagesgoods/429452/item/ingoods_09_429452.jpg?width=1008&impolicy=quality_75",
+//         gender: "WOMEN",
+//         size: "S-XXL",
+//         description: "WOMEN Ultra Light Down Vest",
+//         exclusive: "Exclusive Size Online Only",
+//         price: 2990,
+//         id: 445343
+//     },
+//     {
+//         image: "https://image.uniqlo.com/UQ/ST3/in/imagesgoods/445115/item/ingoods_01_445115.jpg?width=1600&impolicy=quality_75",
+//         gender: "WOMEN",
+//         size: "XS-XXL",
+//         description: "WOMEN Waffle Crew Neck Long Sleeve Dress",
+//         exclusive: "Exclusive Size Online Only",
+//         price: 2490,
+//         id: 445342
+//     },
+//     {
+//         image: "https://image.uniqlo.com/UQ/ST3/in/imagesgoods/445115/item/ingoods_09_445115.jpg?width=1600&impolicy=quality_75",
+//         gender: "WOMEN",
+//         size: "S-3XL",
+//         description: "WOMEN Ultra Light Down Relaxed Jecket",
+//         exclusive: "Exclusive Size Online Only",
+//         price: 2490,
+//         id: 445341
+//     },
+//     {
+//         image: "https://image.uniqlo.com/UQ/ST3/in/imagesgoods/445115/item/ingoods_71_445115.jpg?width=1600&impolicy=quality_75",
+//         gender: "WOMEN",
+//         size: "XS",
+//         description: "WOMEN Ultra Light Down Parka",
+//         exclusive: "Exclusive Size Online Only",
+//         price: 2990,
+//         id: 445340
+//     },
+//     {
+//         image: "https://image.uniqlo.com/UQ/ST3/in/imagesgoods/445050001/item/ingoods_71_445050001.jpg?width=1600&impolicy=quality_75",
+//         gender: "WOMEN",
+//         size: "XS-3XL",
+//         description: "WOMEN Light Pile Lined Fleece Long Sleeve Set",
+//         exclusive: "Exclusive Size Online Only",
+//         price: 2990,
+//         id: 445339
+//     },
+//     {
+//         image: "https://image.uniqlo.com/UQ/ST3/in/imagesgoods/445050001/item/ingoods_69_445050001.jpg?width=1600&impolicy=quality_75",
+//         gender: "WOMEN",
+//         size: "SX-XXL",
+//         description: "WOMEN Fluffy Yarn Fleece Full-Zip Jecket",
+//         exclusive: "Exclusive Size Online Only",
+//         price: 3990,
+//         id: 44538
+//     },
+//     {
+//         image: "https://image.uniqlo.com/UQ/ST3/in/imagesgoods/439753/item/ingoods_08_439753.jpg?width=1600&impolicy=quality_75",
+//         gender: "WOMEN",
+//         size: "XS-3XL",
+//         description: "WOMEN Soft Flannel Long Sleeve Flare Dress",
+//         exclusive: "Exclusive Size Online Only",
+//         price: 2990,
+//         id: 445337
+//     },
+//     {
+//         image: "https://image.uniqlo.com/UQ/ST3/in/imagesgoods/439753/item/ingoods_33_439753.jpg?width=1600&impolicy=quality_75",
+//         gender: "WOMEN",
+//         size: "SX-XXL",
+//         description: "WOMEN Fluffy Yarn Fleece Full-Zip Jecket",
+//         exclusive: "Exclusive Size Online Only",
+//         price: 3990,
+//         id: 445336
+//     },
+//     {
+//         image: "https://image.uniqlo.com/UQ/ST3/in/imagesgoods/443422001/item/ingoods_07_443422001.jpg?width=1600&impolicy=quality_75",
+//         gender: "WOMEN",
+//         size: "SX-XL",
+//         description: "WOMEN Soft Flannel Long Sleeve Flare Dress",
+//         exclusive: "Exclusive Size Online Only",
+//         price: 1990,
+//         id: 445335
+//     }
 
-];
+// ];
 // console.log(newArrivalObj_1[0].price+newArrivalObj_1[1].price);
+let data;
+async function dresses_jumpsuits(){
+    try{
+        const responce = await fetch("https://uniqlo-clone.herokuapp.com/products?gender=WOMEN&cat=Women-dresses-jumpsuits");
+        data = await responce.json();
+        data = data.products;
+        console.log("Data", data);
 
-displayProducts_1(newArrivalObj_1);
+        displayProducts_1(data);
+    }
+    catch(err){
+        console.log("Error", err.messsage);
+    }
+}
+dresses_jumpsuits();
+
 function displayProducts_1(data) {
     document.querySelector(".productSide").innerHTML="";
-    data.map(({ image, gendar, size, description, exclusive, price,id }) => {
+    data.map(({ image, gender, size, description, exclusive, price,_id }) => {
         let mainDiv = document.createElement("div");
         let imgDiv = document.createElement("div");
         let sizeDiv = document.createElement("div");
@@ -125,12 +139,12 @@ function displayProducts_1(data) {
 
         let productsObj = {
             image,
-            gendar,
+            gender,
             size,
             description,
             exclusive,
             price,
-            id,
+            id: _id.substr(5, 6),
             quantity: 1,
         }
         mainDiv.addEventListener("click", () => {
@@ -138,7 +152,7 @@ function displayProducts_1(data) {
         });
 
         img.src = image;
-        gend.innerText = gendar;
+        gend.innerText = gender;
         siz.innerText = size;
         desc.innerText = description;
         exclus.innerText = exclusive;
@@ -157,20 +171,20 @@ var sort = document.getElementById("sortProduct");
 sort.addEventListener("change", function priceSort() {
     var selected = document.getElementById("sortProduct").value;
     if (selected == "low") {
-        newArrivalObj_1.sort(function (a, b) {
+        data.sort(function (a, b) {
             // console.log(a.price)
             return a.price - b.price;
 
         })
     }
     if (selected == "high") {
-        newArrivalObj_1.sort(function (a, b) {
+        data.sort(function (a, b) {
             // console.log(b.price)
             return b.price - a.price;
         })
     }
     
-    displayProducts_1(newArrivalObj_1);
+    displayProducts_1(data);
 });
 
 // Store Data in localStorage here..

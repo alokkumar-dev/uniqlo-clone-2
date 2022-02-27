@@ -1,76 +1,94 @@
-const newArrivalObj_1 = [
-    {
-        image: "https://image.uniqlo.com/UQ/ST3/in/imagesgoods/439702/item/ingoods_74_439702.jpg?width=1008&impolicy=quality_75",
-        gendar: "WOMEN",
-        size: "S-XXL",
-        description: "WOMEN Ultra Light6 Down Jecket",
-        exclusive: "Exclusive Size Online Only",
-        price: 4990
-    },
-    {
-        image: "https://image.uniqlo.com/UQ/ST3/in/imagesgoods/439704/item/ingoods_71_439704.jpg?width=1008&impolicy=quality_75",
-        gendar: "WOMEN",
-        size: "S-3XL",
-        description: "WOMEN Ultra Light Down Parka",
-        exclusive: "Exclusive Size Online Only",
-        price: 5990
-    },
+// const newArrivalObj_1 = [
+//     {
+//         image: "https://image.uniqlo.com/UQ/ST3/in/imagesgoods/439702/item/ingoods_74_439702.jpg?width=1008&impolicy=quality_75",
+//         gender: "WOMEN",
+//         size: "S-XXL",
+//         description: "WOMEN Ultra Light6 Down Jecket",
+//         exclusive: "Exclusive Size Online Only",
+//         price: 4990
+//     },
+//     {
+//         image: "https://image.uniqlo.com/UQ/ST3/in/imagesgoods/439704/item/ingoods_71_439704.jpg?width=1008&impolicy=quality_75",
+//         gender: "WOMEN",
+//         size: "S-3XL",
+//         description: "WOMEN Ultra Light Down Parka",
+//         exclusive: "Exclusive Size Online Only",
+//         price: 5990
+//     },
 
-    {
-        image: "https://image.uniqlo.com/UQ/ST3/in/imagesgoods/429452/item/ingoods_09_429452.jpg?width=1008&impolicy=quality_75",
-        gendar: "WOMEN",
-        size: "S-XXL",
-        description: "WOMEN Ultra Light Down Vest",
-        exclusive: "Exclusive Size Online Only",
-        price: 2990
-    },
-    {
-        image: "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/443932/item/goods_09_443932.jpg?width=1008&impolicy=quality_75",
-        gendar: "WOMEN",
-        size: "S",
-        description: "WOMEN Ultra Light Down Jecket",
-        exclusive: "Exclusive Size Online Only",
-        price: 6990
-    },
-    {
-        image: "https://image.uniqlo.com/UQ/ST3/in/imagesgoods/439707/item/ingoods_56_439707.jpg?width=1008&impolicy=quality_75",
-        gendar: "WOMEN",
-        size: "S-3XL",
-        description: "WOMEN Ultra Light Down Relaxed Jecket",
-        exclusive: "Exclusive Size Online Only",
-        price: 3990
-    },
-    {
-        image: "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/429454/item/goods_07_429454.jpg?width=1008&impolicy=quality_75",
-        gendar: "WOMEN",
-        size: "S",
-        description: "WOMEN Ultra Light Down Parka",
-        exclusive: "Exclusive Size Online Only",
-        price: 2990
-    },
-    {
-        image: "https://image.uniqlo.com/UQ/ST3/in/imagesgoods/440037/item/ingoods_34_440037.jpg?width=1008&impolicy=quality_75",
-        gendar: "WOMEN",
-        size: "S-3XL",
-        description: "WOMEN Light Pile Lined Fleece Long Sleeve Set",
-        exclusive: "Exclusive Size Online Only",
-        price: 2990
-    },
-    {
-        image: "https://image.uniqlo.com/UQ/ST3/in/imagesgoods/439138/item/ingoods_12_439138.jpg?width=1008&impolicy=quality_75",
-        gendar: "WOMEN",
-        size: "SX-XXL",
-        description: "WOMEN Fluffy Yarn Fleece Full-Zip Jecket",
-        exclusive: "Exclusive Size Online Only",
-        price: 3990
-    }
+//     {
+//         image: "https://image.uniqlo.com/UQ/ST3/in/imagesgoods/429452/item/ingoods_09_429452.jpg?width=1008&impolicy=quality_75",
+//         gender: "WOMEN",
+//         size: "S-XXL",
+//         description: "WOMEN Ultra Light Down Vest",
+//         exclusive: "Exclusive Size Online Only",
+//         price: 2990
+//     },
+//     {
+//         image: "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/443932/item/goods_09_443932.jpg?width=1008&impolicy=quality_75",
+//         gender: "WOMEN",
+//         size: "S",
+//         description: "WOMEN Ultra Light Down Jecket",
+//         exclusive: "Exclusive Size Online Only",
+//         price: 6990
+//     },
+//     {
+//         image: "https://image.uniqlo.com/UQ/ST3/in/imagesgoods/439707/item/ingoods_56_439707.jpg?width=1008&impolicy=quality_75",
+//         gender: "WOMEN",
+//         size: "S-3XL",
+//         description: "WOMEN Ultra Light Down Relaxed Jecket",
+//         exclusive: "Exclusive Size Online Only",
+//         price: 3990
+//     },
+//     {
+//         image: "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/429454/item/goods_07_429454.jpg?width=1008&impolicy=quality_75",
+//         gender: "WOMEN",
+//         size: "S",
+//         description: "WOMEN Ultra Light Down Parka",
+//         exclusive: "Exclusive Size Online Only",
+//         price: 2990
+//     },
+//     {
+//         image: "https://image.uniqlo.com/UQ/ST3/in/imagesgoods/440037/item/ingoods_34_440037.jpg?width=1008&impolicy=quality_75",
+//         gender: "WOMEN",
+//         size: "S-3XL",
+//         description: "WOMEN Light Pile Lined Fleece Long Sleeve Set",
+//         exclusive: "Exclusive Size Online Only",
+//         price: 2990
+//     },
+//     {
+//         image: "https://image.uniqlo.com/UQ/ST3/in/imagesgoods/439138/item/ingoods_12_439138.jpg?width=1008&impolicy=quality_75",
+//         gender: "WOMEN",
+//         size: "SX-XXL",
+//         description: "WOMEN Fluffy Yarn Fleece Full-Zip Jecket",
+//         exclusive: "Exclusive Size Online Only",
+//         price: 3990
+//     }
 
-];
+// ];
 // console.log(newArrivalObj_1[0].price+newArrivalObj_1[1].price);
 
-displayProducts_1(newArrivalObj_1);
+let data;
+async function ultraLightProduct() {
+    try {
+      let responce = await fetch(
+        `https://uniqlo-clone.herokuapp.com/products?gender=WOMEN&cat=Women-wirelessBra`
+      );
+  
+      data = await responce.json();
+      data = data.products;
+      console.log("Data : ", data);
+  
+      displayProducts_1(data);
+    } catch (err) {
+      console.log("Error", err);
+    }
+  }
+  ultraLightProduct();
+  
+
 function displayProducts_1(data) {
-    data.map(({ image, gendar, size, description, exclusive, price }) => {
+    data.map(({ image, gender, size, description, exclusive, price, _id }) => {
         let mainDiv = document.createElement("div");
         let imgDiv = document.createElement("div");
         let sizeDiv = document.createElement("div");
@@ -89,18 +107,19 @@ function displayProducts_1(data) {
 
         let productsObj = {
             image,
-            gendar,
+            gender,
             size,
             description,
             exclusive,
-            price
+            price,
+            id: _id.substr(5, 6)
         }
         mainDiv.addEventListener("click", () => {
             storeData(productsObj);
         });
 
         img.src = image;
-        gend.innerText = gendar;
+        gend.innerText = gender;
         siz.innerText = size;
         desc.innerText = description;
         exclus.innerText = exclusive;
