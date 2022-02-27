@@ -88,9 +88,9 @@ async function signin(e){
 
 
 
-// function gotoLogin() {
-//       window.location.href = "registration.html"   
-//   } 
+function gotoLogin() {
+      window.location.href = "registration.html"   
+  } 
 // async function getUser(email, token){
 //    let api = `https://uniqlo-clone.herokuapp.com/users/${email}`;
 
