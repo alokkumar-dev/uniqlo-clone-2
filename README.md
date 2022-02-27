@@ -27,6 +27,7 @@ https://medium.com/@hgauba4/how-did-our-team-build-the-uniqlo-clone-2-0-5f9afef9
 4. Express JS
 5. DB collections
 6. Mongoose
+7. MVC Model
 
 **About Website :**
 
